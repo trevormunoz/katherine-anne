@@ -18,3 +18,10 @@
      );
  }
  add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
+
+ function kap_remove_page_templates( $templates ) {
+   unset( $templates['page-templates/archive.php'] );
+   unset( $templates['page-templates/single.php'] );
+   return $templates;
+ }
+ add_filter( 'theme_page_templates', 'kap_remove_page_templates' );
