@@ -1,4 +1,7 @@
 .DS_Store
 
+# bower dependencies
+bower_components
+
 # npm dependency directory
 node_modules
