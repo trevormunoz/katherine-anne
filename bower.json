@@ -1,0 +1,23 @@
+{
+  "name": "kap-twenty-fifteen-child",
+  "version": "0.1.0",
+  "authors": [
+    "Trevor Muñoz <tmunoz@umd.edu>"
+  ],
+  "description": "Wordpress theme for Katherine Anne Porter Correspondence project\"",
+  "main": "main.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "Wordpress"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
