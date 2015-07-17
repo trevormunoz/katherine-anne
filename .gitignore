@@ -1,0 +1,4 @@
+.DS_Store
+
+# npm dependency directory
+node_modules
