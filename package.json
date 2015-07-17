@@ -1,0 +1,17 @@
+{
+  "name": "kap-twenty-fifteen-child",
+  "version": "0.1.0",
+  "description": "Wordpress Theme for the Katherine Anne Porter Correspondence project",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "wordpress"
+  ],
+  "author": "Trevor Muñoz",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.0"
+  }
+}
