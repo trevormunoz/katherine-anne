@@ -9,7 +9,7 @@
   "keywords": [
     "wordpress"
   ],
-  "author": "Trevor Muñoz",
+  "author": "Trevor Muñoz <tmunoz@umd.edu>",
   "license": "MIT",
   "devDependencies": {
     "gulp": "^3.9.0"
