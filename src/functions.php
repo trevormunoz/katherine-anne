@@ -7,6 +7,23 @@
  *
  */
 
+ function modify_wp_head() {
+   remove_action( 'wp_head',             'rsd_link'                               );
+   remove_action( 'wp_head',             'wlwmanifest_link'                       );
+   remove_action( 'wp_head',             'print_emoji_detection_script',     7    );
+   remove_action( 'wp_head',             'wp_print_head_scripts',            9    );
+   remove_action( 'wp_head',             'rel_canonical'                          );
+   remove_action( 'wp_head',             'wp_site_icon',                    99    );
+ }
+ add_action( 'init', 'modify_wp_head' );
+
+ function dequeue_parent_styles() {
+   wp_dequeue_style( 'twentyfifteen-fonts' );
+   wp_dequeue_style( 'genericons' );
+   wp_dequeue_style( 'twentyfifteen-ie7' );
+ }
+ add_action( 'wp_enqueue_scripts', 'dequeue_parent_styles', 20 );
+
  function theme_enqueue_styles() {
 
      $parent_style = 'parent-style';
