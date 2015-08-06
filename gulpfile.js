@@ -1,6 +1,8 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
 var header = require('gulp-header');
 
 var banner = {
@@ -20,14 +22,23 @@ var banner = {
     '*/ \n\n'
 };
 
-gulp.task('default', function() {
-
-});
-
 gulp.task('styles', function() {
   gulp.src('src/scss/**/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('dest/'));
+});
+
+gulp.task('typography', function() {
+  gulp.src(['bower_components/Lettering.js/jquery.lettering.js', 'src/js/typography.js'])
+    .pipe(concat('typography.js'))
+    .pipe(uglify())
+    .pipe(gulp.dest('dest/js'));
+});
+
+gulp.task('modernizr', function() {
+  gulp.src('bower_components/modernizr/modernizr.js')
+    .pipe(uglify())
+    .pipe(gulp.dest('dest/js/libs/'));
 });
 
 gulp.task('make_theme', function() {
@@ -39,5 +50,7 @@ gulp.task('make_theme', function() {
 
 gulp.task('copy_files', function() {
   gulp.src('src/**/*.php')
-  .pipe(gulp.dest('dest/'));
+    .pipe(gulp.dest('dest/'));
 });
+
+gulp.task('default', ['styles', 'make_theme', 'typography', 'modernizr', 'copy_files'], function() {});
