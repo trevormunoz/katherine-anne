@@ -9,10 +9,21 @@ get_header(); ?>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main" role="main">
 
-		<div class="row">
-			<div class="small-9 small-centered columns">
-				<h1>Hello, world</h1>
-				<p>This is the start of something.</p>
+		<div class="cover">
+			<div class="small-7 small-centered large-offset-1 large-uncentered columns">
+				<h1 class="site-main-title">
+					Katherine <br />
+					Anne <br />
+					Porter<br />
+				</h1>
+				<span class="site-sub-title">correspondence</span>
+			</div>
+			<div class="small-4 columns">
+				<p class="intro">Over 5,000 pages of digitized materials granting unprecedented access
+					 to the ideas, attitudes, and experiences of a distinguished
+					 20th century American writer.
+				 </p>
+				 <a href="introduction" class="button">Read More</a>
 			</div>
 		</div>
 
