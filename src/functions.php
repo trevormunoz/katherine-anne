@@ -44,22 +44,14 @@
 
    wp_enqueue_script( 'modernizr' );
    wp_enqueue_script( 'typography' );
+   wp_enqueue_script( 'underscore' );
  }
  add_action( 'wp_enqueue_scripts', 'theme_modify_head_scripts' );
 
- function theme_typekit_fonts() {
-   wp_register_script( 'theme_typekit', '//use.typekit.net/kyi0gmx.js', array(), '', false );
-   wp_enqueue_script( 'theme_typekit' );
+ function theme_prevent_fout() {
+    echo '<script type="text/javascript">document.documentElement.className += " wf-loading";</script>';
  }
- add_action( 'wp_enqueue_scripts', 'theme_typekit_fonts' );
-
- function theme_typekit_inline() {
-   if ( wp_script_is( 'theme_typekit', 'done' ) ) { ?>
-     <script type="text/javascript">try{Typekit.load({ async: true });}catch(e){}</script>
-    <?php
-  }
- }
-add_action( 'wp_head', 'theme_typekit_inline' );
+ add_action( 'wp_head', 'theme_prevent_fout' );
 
  function kap_remove_page_templates( $templates ) {
    unset( $templates['page-templates/archive.php'] );
