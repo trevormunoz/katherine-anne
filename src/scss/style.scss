@@ -172,10 +172,6 @@ html {
   margin-bottom: 0;
   text-transform: uppercase;
 
-  .wf-loading {
-    visibility: hidden;
-  }
-
   .word2 {
     margin-left: 5rem;
   }
@@ -190,16 +186,17 @@ html {
   font-size: 4rem;
   text-transform: uppercase;
 
-  .wf-loading {
-    visibility: hidden;
-  }
-
   .word1 {
     margin-left: 2.5rem;
     margin-top: -2.5rem;
   }
 }
 
-.intro {
-  margin-top: 1.25rem;
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active,
+.wf-inactive {
+  visibility: visible;
 }
