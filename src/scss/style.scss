@@ -39,6 +39,16 @@
 @import '../../bower_components/foundation/scss/foundation/components/offcanvas';
 @import '../../bower_components/foundation/scss/foundation/components/visibility';
 
+article {
+  @include grid-column(
+    $columns: 10,
+    $last-column: true,
+    $offset: 1,
+    $collapse: true,
+    $center: false
+  );
+}
+
 body:before {
   content: none;
 }
@@ -46,6 +56,50 @@ body:before {
 body,
 html {
   background-color: rgb(248, 247, 246);
+}
+
+.content-area {
+  @include grid-row();
+  height: 100vh;
+}
+
+.entry-header {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.entry-content {
+  @include grid-column(
+    $columns: 6,
+    $collapse: true,
+    $center: false
+  );
+  padding-left: 0;
+  padding-right: 0;
+
+  h3 {
+    font-size: 2.3rem;
+    margin-bottom: 1.1618rem;
+    margin-top: 2.32rem;
+  }
+}
+
+.entry-content-container {
+  @include grid-row();
+}
+
+.entry-nav {
+  @include grid-column(
+    $columns: 3,
+    $collapse: true,
+    $center: false,
+    $float: right
+  );
+}
+
+.entry-title {
+  font-size: 3.7rem;
+  margin-bottom: 3.485rem;
 }
 
 .hentry {
