@@ -109,9 +109,60 @@ html {
   padding: 0;
 }
 
-.cover {
+.intro {
+  margin-top: 1.25rem;
+}
+
+.main-navigation {
+  @include grid-column(
+    $columns: 5,
+    $center: false,
+    $float: right
+  );
+  margin-bottom: 0;
+  margin-left: 0;
+  margin-right: 0;
+
+  ul {
+    border-bottom: 0;
+    border-top: 0;
+  }
+}
+
+.nav-menu {
+  @include inline-list;
+  border-bottom: 0;
+  border-top: 0;
+
+  li {
+    border-bottom: 0;
+    border-top: 0;
+  }
+}
+
+.page-menu {
+  @include side-nav();
+  padding: 0;
+
+  li {
+    border-top: 1px solid rgba(51, 51, 51, .1);
+  }
+}
+
+.secondary {
   @include grid-row();
-  height: 100vh;
+  margin-top: 2.32rem;
+}
+
+.site-logo {
+  @include grid-column(
+    $columns: 4,
+    $offset: 1
+  );
+  padding-bottom: .5rem;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: .5rem;
 }
 
 .site-main-title {
