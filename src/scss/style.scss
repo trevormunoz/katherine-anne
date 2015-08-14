@@ -102,6 +102,16 @@ html {
   margin-bottom: 3.485rem;
 }
 
+.error-404 {
+  @include grid-column(
+    $columns: 10,
+    $last-column: true,
+    $offset: 1,
+    $collapse: true,
+    $center: false
+  );
+}
+
 .hentry {
   background-color: inherit;
   box-shadow: none;
