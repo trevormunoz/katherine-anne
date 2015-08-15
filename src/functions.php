@@ -19,7 +19,6 @@
 
  function dequeue_parent_styles() {
    wp_dequeue_style( 'twentyfifteen-fonts' );
-   wp_dequeue_style( 'genericons' );
    wp_dequeue_style( 'twentyfifteen-ie7' );
  }
  add_action( 'wp_enqueue_scripts', 'dequeue_parent_styles', 20 );
