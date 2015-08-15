@@ -58,3 +58,22 @@
    return $templates;
  }
  add_filter( 'theme_page_templates', 'kap_remove_page_templates' );
+
+ function kap_filter_archive_title ( $title ) {
+
+    if( is_category() ) {
+      $title = single_term_title( '', false );
+
+    } elseif ( is_post_type_archive() ) {
+      $title = post_type_archive_title( '', false );
+
+    }
+
+    return $title;
+  }
+  add_filter( 'get_the_archive_title', 'kap_filter_archive_title' );
+
+  function modify_read_more_link() {
+    return '<a class="more-link" href="' . get_permalink() . '">[See more &hellip;]</a>';
+  }
+  add_filter( 'the_content_more_link', 'modify_read_more_link' );
