@@ -23,3 +23,8 @@ $black       : #000;
 $row-width: 100%;
 $body-font-family: "adelle", serif;
 $header-font-family: "bodoni-urw", sans-serif;
+$side-nav-list-margin: rem-calc(0 0 3 0);
+$side-nav-link-color: $white-smoke;
+$side-nav-link-color-active: scale-color($side-nav-link-color, $lightness: 30%);
+$side-nav-link-color-hover: scale-color($side-nav-link-color, $lightness: 30%);
+$side-nav-link-bg-hover: scale-color($oil, $lightness: 10%);
