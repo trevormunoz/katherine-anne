@@ -1,229 +1,51 @@
 @charset 'UTF-8';
-@import 'theme_settings';
 
-@import '../../bower_components/foundation/scss/foundation/components/grid';
-@import '../../bower_components/foundation/scss/foundation/components/accordion';
-@import '../../bower_components/foundation/scss/foundation/components/alert-boxes';
-@import '../../bower_components/foundation/scss/foundation/components/block-grid';
-@import '../../bower_components/foundation/scss/foundation/components/breadcrumbs';
-@import '../../bower_components/foundation/scss/foundation/components/button-groups';
-@import '../../bower_components/foundation/scss/foundation/components/buttons';
-@import '../../bower_components/foundation/scss/foundation/components/clearing';
-@import '../../bower_components/foundation/scss/foundation/components/dropdown';
-@import '../../bower_components/foundation/scss/foundation/components/dropdown-buttons';
-@import '../../bower_components/foundation/scss/foundation/components/flex-video';
-@import '../../bower_components/foundation/scss/foundation/components/forms';
-@import '../../bower_components/foundation/scss/foundation/components/icon-bar';
-@import '../../bower_components/foundation/scss/foundation/components/inline-lists';
-@import '../../bower_components/foundation/scss/foundation/components/joyride';
-@import '../../bower_components/foundation/scss/foundation/components/keystrokes';
-@import '../../bower_components/foundation/scss/foundation/components/labels';
-@import '../../bower_components/foundation/scss/foundation/components/magellan';
-@import '../../bower_components/foundation/scss/foundation/components/orbit';
-@import '../../bower_components/foundation/scss/foundation/components/pagination';
-@import '../../bower_components/foundation/scss/foundation/components/panels';
-@import '../../bower_components/foundation/scss/foundation/components/pricing-tables';
-@import '../../bower_components/foundation/scss/foundation/components/progress-bars';
-@import '../../bower_components/foundation/scss/foundation/components/range-slider';
-@import '../../bower_components/foundation/scss/foundation/components/reveal';
-@import '../../bower_components/foundation/scss/foundation/components/side-nav';
-@import '../../bower_components/foundation/scss/foundation/components/split-buttons';
-@import '../../bower_components/foundation/scss/foundation/components/sub-nav';
-@import '../../bower_components/foundation/scss/foundation/components/switches';
-@import '../../bower_components/foundation/scss/foundation/components/tables';
-@import '../../bower_components/foundation/scss/foundation/components/tabs';
-@import '../../bower_components/foundation/scss/foundation/components/thumbs';
-@import '../../bower_components/foundation/scss/foundation/components/tooltips';
-@import '../../bower_components/foundation/scss/foundation/components/top-bar';
-@import '../../bower_components/foundation/scss/foundation/components/type';
-@import '../../bower_components/foundation/scss/foundation/components/offcanvas';
-@import '../../bower_components/foundation/scss/foundation/components/visibility';
+@import '../../bower_components/bootstrap/scss/variables';
+@import '../../bower_components/bootstrap/scss/mixins';
+@import 'theme_variables';
 
-@mixin left-section {
-  @include grid-column(
-    $columns: 10,
-    $last-column: true,
-    $offset: 1,
-    $collapse: true,
-    $center: false
-  );
-}
+// // Reset and dependencies
+@import '../../bower_components/bootstrap/scss/normalize';
+@import '../../bower_components/bootstrap/scss/print';
 
-.archive-header-container {
-  @include left-section;
-}
+// Core CSS
+@import '../../bower_components/bootstrap/scss/reboot';
+@import '../../bower_components/bootstrap/scss/type';
+@import '../../bower_components/bootstrap/scss/images';
+@import '../../bower_components/bootstrap/scss/code';
+@import '../../bower_components/bootstrap/scss/grid';
+@import '../../bower_components/bootstrap/scss/tables';
+@import '../../bower_components/bootstrap/scss/forms';
+@import '../../bower_components/bootstrap/scss/buttons';
 
-.archive-header {
-  padding-left: 0;
-  padding-right: 0;
-}
+// // Components
+@import '../../bower_components/bootstrap/scss/animation';
+@import '../../bower_components/bootstrap/scss/dropdown';
+@import '../../bower_components/bootstrap/scss/button-group';
+@import '../../bower_components/bootstrap/scss/input-group';
+@import '../../bower_components/bootstrap/scss/custom-forms';
+@import '../../bower_components/bootstrap/scss/nav';
+@import '../../bower_components/bootstrap/scss/navbar';
+@import '../../bower_components/bootstrap/scss/card';
+@import '../../bower_components/bootstrap/scss/breadcrumb';
+@import '../../bower_components/bootstrap/scss/pagination';
+@import '../../bower_components/bootstrap/scss/pager';
+@import '../../bower_components/bootstrap/scss/labels';
+@import '../../bower_components/bootstrap/scss/jumbotron';
+@import '../../bower_components/bootstrap/scss/alert';
+@import '../../bower_components/bootstrap/scss/progress';
+@import '../../bower_components/bootstrap/scss/media';
+@import '../../bower_components/bootstrap/scss/list-group';
+@import '../../bower_components/bootstrap/scss/responsive-embed';
+@import '../../bower_components/bootstrap/scss/close';
 
-.archive-title {
-  font-size: 3.7rem;
-  margin-bottom: 3.485rem;
-}
+// Components w/ JavaScript
+@import '../../bower_components/bootstrap/scss/modal';
+@import '../../bower_components/bootstrap/scss/tooltip';
+@import '../../bower_components/bootstrap/scss/popover';
+@import '../../bower_components/bootstrap/scss/carousel';
 
-article {
-  @include left-section;
-}
-
-body:before {
-  content: none;
-}
-
-body,
-html {
-  background-color: rgb(248, 247, 246);
-}
-
-.content-area {
-  @include grid-row();
-  height: 100vh;
-}
-
-.entry-header {
-  padding-left: 0;
-  padding-right: 0;
-}
-
-.entry-content {
-  @include grid-column(
-    $columns: 6,
-    $collapse: true,
-    $center: false
-  );
-  padding-left: 0;
-  padding-right: 0;
-
-  h3 {
-    font-size: 2.3rem;
-    margin-bottom: 1.1618rem;
-    margin-top: 2.32rem;
-  }
-}
-
-.entry-content-container {
-  @include grid-row();
-}
-
-.entry-nav {
-  @include grid-column(
-    $columns: 3,
-    $collapse: true,
-    $center: false,
-    $float: right
-  );
-}
-
-.entry-title {
-  font-size: 3.7rem;
-  margin-bottom: 3.485rem;
-}
-
-.error-404 {
-  @include left-section;
-}
-
-.dropdown-toggle:focus {
-  background-color: $inherit;
-  outline: none;
-}
-
-.hentry {
-  background-color: inherit;
-  box-shadow: none;
-  margin: 0;
-  padding: 0;
-}
-
-.intro {
-  margin-top: 1.25rem;
-}
-
-.main-navigation {
-  @include grid-column(
-    $columns: 5,
-    $center: false,
-    $float: right
-  );
-  margin-bottom: 0;
-  margin-left: 0;
-  margin-right: 0;
-
-  ul {
-    border-bottom: 0;
-    border-top: 0;
-  }
-}
-
-.nav-menu {
-  @include inline-list;
-  border-bottom: 0;
-  border-top: 0;
-
-  li {
-    border-bottom: 0;
-    border-top: 0;
-  }
-}
-
-.page-menu {
-  @include side-nav();
-  padding: 0;
-
-  li {
-    border-top: 1px solid rgba(51, 51, 51, .1);
-  }
-}
-
-.secondary {
-  @include grid-row();
-  margin-top: 2.32rem;
-}
-
-.site-logo {
-  @include grid-column(
-    $columns: 4,
-    $offset: 1
-  );
-  padding-bottom: .5rem;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: .5rem;
-}
-
-.site-main-title {
-  font-size: 6rem;
-  font-weight: 500;
-  line-height: 7rem;
-  margin-bottom: 0;
-  text-transform: uppercase;
-
-  .word2 {
-    margin-left: 5rem;
-  }
-
-  .word3 {
-    margin-left: 2.5rem;
-  }
-}
-
-.site-sub-title {
-  font-family: "bodoni-urw",sans-serif;
-  font-size: 4rem;
-  text-transform: uppercase;
-
-  .word1 {
-    margin-left: 2.5rem;
-    margin-top: -2.5rem;
-  }
-}
-
-.wf-loading {
-  visibility: hidden;
-}
-
-.wf-active,
-.wf-inactive {
-  visibility: visible;
-}
+// Utility classes
+@import '../../bower_components/bootstrap/scss/utilities';
+@import '../../bower_components/bootstrap/scss/utilities-spacing';
+@import '../../bower_components/bootstrap/scss/utilities-responsive';

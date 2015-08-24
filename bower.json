@@ -22,7 +22,7 @@
   ],
   "dependencies": {
     "bourbon": "~4.2.3",
-    "foundation": "~5.5.2",
+    "bootstrap": "~4.0.0",
     "Lettering.js": "~0.7.0"
   }
 }
