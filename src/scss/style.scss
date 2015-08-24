@@ -49,3 +49,50 @@
 @import '../../bower_components/bootstrap/scss/utilities';
 @import '../../bower_components/bootstrap/scss/utilities-spacing';
 @import '../../bower_components/bootstrap/scss/utilities-responsive';
+
+body:before {
+  content: none;
+}
+
+.hentry {
+  background-color: inherit;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.site-main-title {
+  font-size: 6rem;
+  font-weight: 500;
+  line-height: 7rem;
+  margin-bottom: 0;
+  text-transform: uppercase;
+
+  .word2 {
+    margin-left: 5rem;
+  }
+
+  .word3 {
+    margin-left: 2.5rem;
+  }
+}
+
+.site-sub-title {
+  font-family: "bodoni-urw",sans-serif;
+  font-size: 4rem;
+  text-transform: uppercase;
+
+  .word1 {
+    margin-left: 2.5rem;
+    margin-top: -2.5rem;
+  }
+}
+
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active,
+.wf-inactive {
+  visibility: visible;
+}
