@@ -44,6 +44,7 @@
    wp_enqueue_script( 'modernizr' );
    wp_enqueue_script( 'typography' );
    wp_enqueue_script( 'underscore' );
+   wp_enqueue_script( 'backbone' );
  }
  add_action( 'wp_enqueue_scripts', 'theme_modify_head_scripts' );
 
