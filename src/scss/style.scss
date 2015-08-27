@@ -1,6 +1,6 @@
 @charset 'UTF-8';
 
-@import '../../bower_components/bootstrap/scss/variables';
+// @import '../../bower_components/bootstrap/scss/variables';
 @import '../../bower_components/bootstrap/scss/mixins';
 @import 'theme_variables';
 
@@ -50,8 +50,55 @@
 @import '../../bower_components/bootstrap/scss/utilities-spacing';
 @import '../../bower_components/bootstrap/scss/utilities-responsive';
 
+article {
+  @include make-col();
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(6);
+  }
+}
+
+.archive-header-container {
+  @include make-col();
+  margin-bottom: 3.24rem;
+  padding-left: 3.98rem;
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(12);
+  }
+}
+
+.archive-title {
+  font-size: 3.9rem;
+}
+
 body:before {
   content: none;
+}
+
+.content-area {
+  @include make-container();
+}
+
+.current-menu-item a {
+  @include plain-hover-focus {
+    background-color: $component-active-bg;
+    color: $component-active-color;
+    cursor: default;
+  }
+}
+
+.entry-content h3 {
+  margin-bottom: $headings-margin-bottom;
+  margin-top: 0;
 }
 
 .hentry {
@@ -61,11 +108,65 @@ body:before {
   padding: 0;
 }
 
+.main-action-button {
+  @include button-outline-variant($btn-primary-bg);
+  @include button-size($btn-padding-y-lg,
+                       $btn-padding-x-lg,
+                       $font-size-lg,
+                       $line-height-lg,
+                       $btn-border-radius-lg);
+}
+
+.menu-item {
+  display: inline-block;
+
+  a {
+    @include border-radius($nav-pills-border-radius);
+
+    display: block;
+    padding: $nav-link-padding;
+
+    @include hover-focus {
+      text-decoration: none;
+    }
+  }
+}
+
+.entry-content .more-link:after {
+  content: none;
+}
+
+.nav-inline {
+  .menu-item + .menu-item {
+    margin-left: 1rem;
+  }
+}
+
+.secondary {
+  @include make-container();
+}
+
+.site-call-to-action {
+  @include make-col();
+
+  @media (max-width: 32em) {
+    @include make-col-span(6);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(6);
+  }
+}
+
+.site-main {
+  @include make-row();
+}
+
 .site-main-title {
   font-size: 6rem;
   font-weight: 500;
   line-height: 7rem;
-  margin-bottom: 0;
+  margin-top: 0;
   text-transform: uppercase;
 
   .word2 {
@@ -77,14 +178,64 @@ body:before {
   }
 }
 
+.site-logo {
+  @include make-col();
+  padding-left: 3.98rem;
+  padding-top: 3rem;
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(6);
+  }
+
+  a {
+    @include border-radius($nav-pills-border-radius);
+
+    display: block;
+    padding: $nav-link-padding;
+  }
+}
+
+.site-menu {
+  @include make-row();
+}
+
+.site-nav {
+  @include make-col();
+  padding-top: 3rem;
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(6);
+  }
+}
+
 .site-sub-title {
-  font-family: "bodoni-urw",sans-serif;
+  font-family: "bodoni-urw", sans-serif;
   font-size: 4rem;
   text-transform: uppercase;
 
   .word1 {
     margin-left: 2.5rem;
     margin-top: -2.5rem;
+  }
+}
+
+.site-title-container {
+  @include make-col();
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(6);
   }
 }
 

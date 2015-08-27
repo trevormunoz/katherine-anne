@@ -44,8 +44,8 @@ $brand-danger:              #d9534f !default;
 //
 // Quickly modify global styling by enabling or disabling optional features.
 
-$enable-flex:               false !default;
-$enable-rounded:            true !default;
+$enable-flex:               true !default;
+$enable-rounded:            false !default;
 $enable-shadows:            false !default;
 $enable-gradients:          false !default;
 $enable-transitions:        false !default;
@@ -124,7 +124,7 @@ $grid-gutter-width:          1.875rem !default; // 30px
 // Font, line-height, and color for body text, headings, and more.
 
 $font-family-sans-serif:     'Helvetica Neue', Helvetica, Arial, sans-serif !default;
-$font-family-serif:          'adelle', Georgia, 'Times New Roman', Times, serif !default;
+$font-family-serif:          'Adelle', Georgia, 'Times New Roman', Times, serif !default;
 $font-family-monospace:      Menlo, Monaco, Consolas, 'Courier New', monospace !default;
 $font-family-base:           $font-family-serif !default;
 
