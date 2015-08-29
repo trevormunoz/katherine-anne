@@ -101,6 +101,22 @@ body:before {
   margin-top: 0;
 }
 
+.entry-content .more-link:after {
+  content: none;
+}
+
+.error-404 {
+  @include make-col();
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(12);
+  }
+}
+
 .hentry {
   background-color: inherit;
   box-shadow: none;
