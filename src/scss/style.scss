@@ -108,6 +108,10 @@ body:before {
   padding: 0;
 }
 
+.intro {
+  padding-top: 1rem;
+}
+
 .main-action-button {
   @include button-outline-variant($btn-primary-bg);
   @include button-size($btn-padding-y-lg,
@@ -154,7 +158,7 @@ body:before {
   }
 
   @media (min-width: 62em) {
-    @include make-col-span(6);
+    @include make-col-span(5);
   }
 }
 
