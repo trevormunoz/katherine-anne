@@ -21,7 +21,12 @@
     "tests"
   ],
   "dependencies": {
+    "Lettering.js": "~0.7.0",
+    "almond": "~0.3.1",
+    "backbone": "~1.2.2",
     "bootstrap": "~4.0.0-alpha",
-    "Lettering.js": "~0.7.0"
+    "handlebars": "~3.0.3",
+    "requirejs": "~2.1.20",
+    "text": "requirejs-text#~2.0.14"
   }
 }
