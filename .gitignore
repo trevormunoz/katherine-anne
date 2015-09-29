@@ -1,5 +1,5 @@
 .DS_Store
-dest/**
+dist*
 
 # bower dependencies
 bower_components
