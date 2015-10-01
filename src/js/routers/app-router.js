@@ -1,18 +1,21 @@
+import * as Backbone from 'backbone';
 
+class AppRouter extends Backbone.Router {
 
-    var AppRouter = Backbone.Router.extend({
+  get routes() {
+    return {
+      '': 'loadDefault'
+    };
+  }
 
-      routes: {
-        '': 'loadDefault'
-      },
+  initialize() {
+    window.console.log('Router initialized!');
+  }
 
-      initialize: function() {
-        window.console.log('Router initialized!');
-      },
+  loadDefault() {
+    window.console.log('loadDefault fired');
+  }
 
-      loadDefault: function() {
-        window.console.log('loadDefault fired');
-      }
+}
 
-    });
-
+export default AppRouter;
