@@ -7,11 +7,7 @@ get_header(); ?>
 
 			<section class="site-hero-section">
 			  <div class="site-title-container p-a-lg">
-			    <h1 class="site-main-title">
-			      Katherine <br />
-			      Anne <br />
-			      Porter<br />
-			    </h1>
+			    <h1 class="site-main-title"><span>Katherine</span> <span>Anne</span> <span>Porter</span></h1>
 			    <span class="site-sub-title">correspondence</span>
 			  </div>
 			</section>
