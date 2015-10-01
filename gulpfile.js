@@ -30,7 +30,6 @@ var banner = {
     'Version:      0.1.0 \n' +
     'License:      MIT \n' +
     'License URI:  http://opensource.org/licenses/MIT \n' +
-    'Tags:         minimal, backbonejs \n' +
     'Text Domain:  kap-twenty-fifteen-child \n' +
     '*/ \n\n'
 };
