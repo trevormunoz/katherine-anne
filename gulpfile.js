@@ -35,35 +35,51 @@ var banner = {
     '*/ \n\n'
 };
 
-gulp.task('styles', function() {
-  gulp.src('src/scss/**/*.scss')
-    .pipe(sass().on('error', sass.logError))
-    .pipe(gulp.dest('dest/'));
+gulp.task('clean', function(callback) {
+  return del(['./dist', './kap-twenty-fifteen-child.zip'], callback);
+});
+
+gulp.task('build:css', function() {
+  return gulp.src('src/scss/**/*.scss')
+    .pipe(sass().on('error', gutil.log))
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(header(banner.theme))
+    .pipe(gulp.dest('dist/'));
 });
 
 gulp.task('typography', function() {
-  gulp.src(['bower_components/Lettering.js/jquery.lettering.js', 'src/js/typography.js'])
-    .pipe(concat('typography.js'))
+  return gulp.src(['src/js/typography.js'])
+    .pipe(gulp.dest('dist/js'));
+});
+
+gulp.task('build:es6', function() {
+  return browserify({
+    entries: './src/js/main.js',
+    debug: true
+  })
+  .transform(babelify)
+  .bundle()
+  .pipe(source('kap.js'))
+  .pipe(buffer())
+  .pipe(sourcemaps.init({loadMaps: true}))
     .pipe(uglify())
-    .pipe(gulp.dest('dest/js'));
+    .on('error', gutil.log)
+  .pipe(sourcemaps.write('./'))
+  .pipe(rename('kap.min.js'))
+  .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('modernizr', function() {
-  gulp.src('bower_components/modernizr/modernizr.js')
-    .pipe(uglify())
-    .pipe(gulp.dest('dest/js/libs/'));
+gulp.task('zip', function() {
+  return gulp.src(['dist/**/*', 'src/**/*.php', 'src/**/*.png'])
+    .pipe(zip('kap-twenty-fifteen-child.zip'))
+    .pipe(gulp.dest('./'));
 });
 
-gulp.task('make_theme', function() {
-  gulp.src('dest/style.css')
-    .pipe(minifyCss({compatibility: 'ie8'}))
-    .pipe(header(banner.theme))
-    .pipe(gulp.dest('dest/'));
+gulp.task('default', function(callback) {
+  return runSequence(
+    'clean',
+    ['build:css', 'typography', 'build:es6'],
+    'zip',
+    callback
+  );
 });
-
-gulp.task('copy_files', function() {
-  gulp.src('src/**/*.php')
-    .pipe(gulp.dest('dest/'));
-});
-
-gulp.task('default', ['styles', 'make_theme', 'typography', 'modernizr', 'copy_files'], function() {});
