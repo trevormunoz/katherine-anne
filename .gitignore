@@ -1,5 +1,6 @@
-.DS_Store
+# Ignore build artifacts if they're present
 dist*
+kap-twenty-fifteen-child.zip
 
 # bower dependencies
 bower_components
