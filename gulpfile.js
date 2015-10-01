@@ -1,9 +1,20 @@
+// Dependencies
 var gulp = require('gulp');
+var del = require('del');
+var gutil = require('gulp-util');
+var zip = require('gulp-zip');
 var sass = require('gulp-sass');
 var minifyCss = require('gulp-minify-css');
+var browserify = require('browserify');
+var babelify = require('babelify');
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
+var rename = require('gulp-rename');
 var header = require('gulp-header');
+var sourcemaps = require('gulp-sourcemaps');
+var runSequence = require('run-sequence');
 
 var banner = {
   theme:
