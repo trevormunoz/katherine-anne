@@ -18,9 +18,6 @@
     "tests"
   ],
   "dependencies": {
-    "Lettering.js": "~0.7.0",
-    "backbone": "~1.2.2",
-    "bootstrap": "~4.0.0-alpha",
-    "handlebars": "~3.0.3",
+    "bootstrap": "~4.0.0-alpha"
   }
 }
