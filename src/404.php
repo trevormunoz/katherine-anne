@@ -14,15 +14,15 @@ get_header(); ?>
       <section class="error-404">
   			<header class="entry-header">
   				<h1 class="entry-title">
-            <?php _e( 'Return to Sender', 'kap-twenty-fifteen-child' ); ?>
+            <?php _e( 'Return to Sender', 'katherine-anne' ); ?>
           </h1>
   			</header><!-- .entry-header -->
         <div class="entry-content-container">
     			<div class="entry-content">
     				<p>
-              <?php _e( 'We can&rsquo;t deliver you to the page you requested. Try again?', 'kap-twenty-fifteen-child' ); ?>
+              <?php _e( 'We can&rsquo;t deliver you to the page you requested. Try again?', 'katherine-anne' ); ?>
             </p>
-						<p><a href="/introduction"><?php _e('Home', 'kap-twenty-fifteen-child'); ?></a></p>
+						<p><a href="/introduction"><?php _e('Home', 'katherine-anne'); ?></a></p>
     			</div><!-- .entry-content -->
         </div><!-- .entry-content-container -->
       </section><!-- .error-404 -->

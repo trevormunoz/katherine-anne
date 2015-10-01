@@ -30,12 +30,12 @@ var banner = {
     'Version:      0.1.0 \n' +
     'License:      MIT \n' +
     'License URI:  http://opensource.org/licenses/MIT \n' +
-    'Text Domain:  kap-twenty-fifteen-child \n' +
+    'Text Domain:  katherine-anne \n' +
     '*/ \n\n'
 };
 
 gulp.task('clean', function(callback) {
-  return del(['./dist', './kap-twenty-fifteen-child.zip'], callback);
+  return del(['./dist', './katherine-anne.zip'], callback);
 });
 
 gulp.task('build:css', function() {
@@ -70,7 +70,7 @@ gulp.task('build:es6', function() {
 
 gulp.task('zip', function() {
   return gulp.src(['dist/**/*', 'src/**/*.php', 'src/**/*.png'])
-    .pipe(zip('kap-twenty-fifteen-child.zip'))
+    .pipe(zip('katherine-anne.zip'))
     .pipe(gulp.dest('./'));
 });
 

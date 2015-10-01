@@ -1,6 +1,6 @@
 # Ignore build artifacts if they're present
 dist*
-kap-twenty-fifteen-child.zip
+katherine-anne.zip
 
 # bower dependencies
 bower_components

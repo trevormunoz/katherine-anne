@@ -1,6 +1,6 @@
 <?php
 /**
- * kap-twenty-fifteen-child functions and definitions
+ * katherine-anne functions and definitions
  *
  * @link https://codex.wordpress.org/Theme_Development
  * @link https://codex.wordpress.org/Child_Themes
