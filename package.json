@@ -6,6 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   "private": true,
+  "engines": {
+    "node": "^4.0.0"
   },
   "keywords": [
     "wordpress"
