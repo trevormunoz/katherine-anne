@@ -21,10 +21,10 @@ var runSequence = require('run-sequence');
 var banner = {
   theme:
     '/* \n' +
-    'Theme Name:   KAP Correspondence Child Theme \n' +
+    'Theme Name:   Katherine Anne \n' +
     'Theme URI: \n' +
-    'Description:  Twenty Fifteen Child Theme \n' +
-    'Author:       Trevor Muñoz \n' +
+    'Description:  Katherine Anne Porter Correspondence Theme \n' +
+    'Author:       Trevor Muñoz <tmunoz@umd.edu> \n' +
     'Author URI:   http://www.trevormunoz.com \n' +
     'Template:     twentyfifteen \n' +
     'Version:      0.1.0 \n' +
