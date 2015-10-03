@@ -74,6 +74,14 @@ gulp.task('zip', function() {
     .pipe(gulp.dest('./'));
 });
 
+gulp.task('styles-only', function(callback) {
+  return runSequence(
+    ['build:css', 'typography'],
+    'zip',
+    callback
+  );
+});
+
 gulp.task('default', function(callback) {
   return runSequence(
     'clean',
