@@ -15,7 +15,7 @@ get_header(); ?>
 					unprecedented access to the ideas, attitudes, and experiences of a
 					distinguished 20th century American writer.
 		     </p>
-		     <a href="introduction" class="btn main-action-button">Read More</a>
+		     <a href="#more-about" class="btn main-action-button">Read More</a>
 		  </div>
 		</section><!-- .site-call-to-action -->
 		<hr />
