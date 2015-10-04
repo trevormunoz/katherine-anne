@@ -82,6 +82,57 @@ article {
 
 body:before {
   content: none;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.browse-options {
+  @include make-row();
+
+  padding-bottom: ($spacer * 3);
+  padding-left: 3.98rem;
+  padding-right: 3.98rem;
+  padding-top: ($spacer * 1.5);
+
+  :nth-child(1) > h2 {
+    text-align: center;
+  }
+
+  :nth-child(2) > h2 {
+    text-align: center;
+  }
+
+  :nth-child(3) > h2 {
+    text-align: center;
+  }
+}
+
+.browse-teaser {
+  @include make-col();
+  padding-top: 1rem;
+
+  h2>small {
+    color: $gray-light;
+  }
+
+  h2>small::after {
+    content: '\A';
+    white-space: pre;
+  }
+
+  p {
+    padding-left: ($grid-gutter-width / 2);
+    padding-right: ($grid-gutter-width / 2);
+    text-align: justify;
+  }
+
+  @media (max-width: 32em) {
+    @include make-col-span(12);
+  }
+
+  @media (min-width: 62em) {
+    @include make-col-span(4);
+  }
 }
 
 .content-area {
@@ -117,6 +168,19 @@ body:before {
   }
 }
 
+footer {
+  @include make-row();
+  background-color: $project-darkest;
+  flex: 1;
+  height: 12rem;
+}
+
+.form-group {
+  padding-left: (($spacer * 6) + ($grid-gutter-width / 2));
+  padding-right: ($grid-gutter-width / 2);
+  width: 50vw;
+}
+
 .hentry {
   background-color: inherit;
   box-shadow: none;
@@ -132,6 +196,11 @@ body:before {
   display: flex;
   height: 90vh;
   width: 100vw;
+}
+
+hr {
+  background: currentColor;
+  width: 22em;
 }
 
 .intro {
@@ -176,6 +245,29 @@ body:before {
   }
 }
 
+.project-about-teaser {
+  @include make-row();
+
+  padding-bottom: ($spacer * 3);
+  padding-left: 3.98rem;
+  padding-right: 3.98rem;
+  padding-top: ($spacer * 1.5);
+}
+
+.project-about-teaser:focus {
+  outline: none;
+}
+
+.search-teaser {
+  margin: auto;
+  padding-bottom: 1.5rem;
+  width: 60vw;
+
+  button {
+    height: 2.625rem;
+  }
+}
+
 .secondary {
   @include make-container();
 }
@@ -210,7 +302,7 @@ body:before {
   color: hsl(187, 43%, 16%);
   font-size: 6rem;
   font-weight: 500;
-  line-height: 7rem;
+  line-height: 5.5rem;
   margin-top: 0;
   text-shadow: 0 1px 1px hsla(0, 0%, 100%, .9);
   text-transform: uppercase;
