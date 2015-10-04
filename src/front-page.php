@@ -18,6 +18,18 @@ get_header(); ?>
 		     <a href="introduction" class="btn main-action-button">Read More</a>
 		  </div>
 		</section><!-- .site-call-to-action -->
+		<hr />
+		<div class="browse-options">
+			<section class="browse-teaser">
+				<h2><small>Browse by</small> Correspondent</h2>
+			</section>
+			<section class="browse-teaser">
+				<h2><small>Browse by</small> Location</h2>
+			</section>
+			<section class="browse-teaser">
+				<h2><small>Browse by</small> Decade</h2>
+			</section>
+		</div><!-- .browse-options -->
 	</div><!-- .content-area -->
 
 <?php get_footer(); ?>
