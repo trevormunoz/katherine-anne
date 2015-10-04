@@ -39,6 +39,10 @@ get_header(); ?>
 				<button type="submit" class="btn btn-primary">Search</button>
 			</form>
 		</div><!-- .search-teaser -->
+		<hr />
+		<section id="more-about" class="project-about-teaser">
+			<h2>About the Project</h2>
+		</section>
 	</div><!-- .content-area -->
 
 <?php get_footer(); ?>
