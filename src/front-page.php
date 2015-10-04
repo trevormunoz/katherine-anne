@@ -30,6 +30,15 @@ get_header(); ?>
 				<h2><small>Browse by</small> Decade</h2>
 			</section>
 		</div><!-- .browse-options -->
+		<hr />
+		<div class="search-teaser">
+			<form class="form-inline">
+				<div class="form-group">
+					<input type="text">
+				</div>
+				<button type="submit" class="btn btn-primary">Search</button>
+			</form>
+		</div><!-- .search-teaser -->
 	</div><!-- .content-area -->
 
 <?php get_footer(); ?>
