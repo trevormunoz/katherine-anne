@@ -1,3 +1,5 @@
-# Minimal WP Theme for KAP Correspondence Project
+# Katherine Anne
+----
+### A minimal WP Theme for the KAP Correspondence Project
 
 What it says on the tin.
