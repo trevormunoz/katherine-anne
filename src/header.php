@@ -19,7 +19,7 @@
 
 	<!-- main nav -->
 	<?php if ( ! is_home() && has_nav_menu( 'primary' ) ) : ?>
-			<div id="secondary" class="secondary">
+			<header>
 				<div class="site-menu">
 					<div class="site-logo">
 						<a href="/introduction">Home</a>
@@ -34,5 +34,5 @@
 						?>
 					</nav><!-- .main-navigation -->
 				</div><!-- .menu -->
-		</div><!-- .secondary -->
+		</header>
 	<?php endif; ?>
