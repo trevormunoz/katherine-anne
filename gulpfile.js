@@ -58,6 +58,7 @@ gulp.task('build:es6', function() {
   })
   .transform(babelify)
   .bundle()
+  .on('error', function (err) { gutil.log("Error : " + err.message); })
   .pipe(source('kap.js'))
   .pipe(buffer())
 //  .pipe(sourcemaps.init({loadMaps: true}))
