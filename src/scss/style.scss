@@ -82,6 +82,10 @@ article {
 
 body:before {
   content: none;
+}
+
+body {
+  display: flex;
   flex-flow: column;
   min-height: 100vh;
 }
@@ -137,6 +141,7 @@ body:before {
 
 .content-area {
   @include make-container();
+  flex: 1;
 }
 
 .current-menu-item a {
@@ -171,7 +176,6 @@ body:before {
 footer {
   @include make-row();
   background-color: $project-darkest;
-  flex: 1;
   height: 12rem;
 }
 
@@ -179,6 +183,12 @@ footer {
   padding-left: (($spacer * 6) + ($grid-gutter-width / 2));
   padding-right: ($grid-gutter-width / 2);
   width: 50vw;
+}
+
+header {
+  @include make-container();
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .hentry {
@@ -261,15 +271,12 @@ hr {
 .search-teaser {
   margin: auto;
   padding-bottom: 1.5rem;
+  padding-top: 1.5rem;
   width: 60vw;
 
   button {
     height: 2.625rem;
   }
-}
-
-.secondary {
-  @include make-container();
 }
 
 .site-call-to-action {
