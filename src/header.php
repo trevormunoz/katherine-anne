@@ -22,7 +22,7 @@
 			<header>
 				<div class="site-menu">
 					<div class="site-logo">
-						<a href="/introduction">Home</a>
+						<a href="/">Home</a>
 					</div><!-- .site-logo -->
 					<nav id="site-navigation" class="site-nav" role="navigation">
 						<?php
