@@ -24,6 +24,7 @@
   "devDependencies": {
     "babelify": "^6.3.0",
     "bower": "^1.5.3",
+    "browserify": "^11.2.0",
     "del": "^2.0.2",
     "gulp": "^3.9.0",
     "gulp-concat": "^2.6.0",
