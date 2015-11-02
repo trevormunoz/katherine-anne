@@ -1,19 +1,26 @@
 import * as Backbone from 'backbone';
+import SearchBoxView from '../views/searchBox-view.js';
+import SearchResultsView from '../views/searchResults-view.js';
 
 class AppRouter extends Backbone.Router {
 
   get routes() {
     return {
-      '': 'loadDefault'
+      '': 'loadDefault',
+      'search/results': 'showSearchResults'
     };
   }
 
   initialize() {
-    window.console.log('Router initialized!');
+    window.console.log('Router initialized');
   }
 
   loadDefault() {
-    window.console.log('loadDefault fired');
+    new SearchBoxView();
+  }
+
+  showSearchResults() {
+    new SearchResultsView();
   }
 
 }
