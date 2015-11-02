@@ -15,7 +15,7 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var rename = require('gulp-rename');
 var header = require('gulp-header');
-var sourcemaps = require('gulp-sourcemaps');
+//var sourcemaps = require('gulp-sourcemaps');
 var runSequence = require('run-sequence');
 
 var banner = {
@@ -60,10 +60,10 @@ gulp.task('build:es6', function() {
   .bundle()
   .pipe(source('kap.js'))
   .pipe(buffer())
-  .pipe(sourcemaps.init({loadMaps: true}))
-    .pipe(uglify())
-    .on('error', gutil.log)
-  .pipe(sourcemaps.write('./'))
+//  .pipe(sourcemaps.init({loadMaps: true}))
+  .pipe(uglify())
+  .on('error', gutil.log)
+//  .pipe(sourcemaps.write('./'))
   .pipe(rename('kap.min.js'))
   .pipe(gulp.dest('dist/js'));
 });
