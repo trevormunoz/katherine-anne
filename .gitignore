@@ -2,6 +2,8 @@
 dist*
 katherine-anne.zip
 
+# Ignore fixtures
+ansible/data*
 
 # npm dependency directory
 node_modules
