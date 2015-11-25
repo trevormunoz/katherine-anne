@@ -80,9 +80,7 @@ gulp.task('build:es6', function() {
   .on('error', function (err) { gutil.log("Error : " + err.message); })
   .pipe(source('kap.js'))
   .pipe(buffer())
-//  .pipe(sourcemaps.init({loadMaps: true}))
   .pipe(uglify())
-//  .pipe(sourcemaps.write('./'))
   .on('error', function (err) { gutil.log("Error : " + err.message); })
   .pipe(rename('kap.min.js'))
   .pipe(gulp.dest('dist/js'));
