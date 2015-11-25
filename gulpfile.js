@@ -52,6 +52,10 @@ gulp.task('build:css', function() {
       gutil.log('Error: ' + err.message);
       this.emit('end');
     }))
+    .pipe(autoprefixer({
+      browsers: ['last 2 versions'],
+      cascade: false
+    }))
     .pipe(minifyCss({compatibility: 'ie8'}))
     .on('error', function(err) {
       gutil.log("Error : " + err.message);
