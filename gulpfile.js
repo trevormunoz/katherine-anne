@@ -45,8 +45,15 @@ gulp.task('clean:zip', function(callback) {
 
 gulp.task('build:css', function() {
   return gulp.src('src/scss/**/*.scss')
-    .pipe(sass().on('error', gutil.log))
+    .pipe(sass().on('error', function(err) {
+      gutil.log('Error: ' + err.message);
+      this.emit('end');
+    }))
     .pipe(minifyCss({compatibility: 'ie8'}))
+    .on('error', function(err) {
+      gutil.log("Error : " + err.message);
+      this.emit('end');
+    })
     .pipe(header(banner.theme))
     .pipe(gulp.dest('dist/'));
 });
@@ -68,8 +75,8 @@ gulp.task('build:es6', function() {
   .pipe(buffer())
 //  .pipe(sourcemaps.init({loadMaps: true}))
   .pipe(uglify())
-  .on('error', gutil.log)
 //  .pipe(sourcemaps.write('./'))
+  .on('error', function (err) { gutil.log("Error : " + err.message); })
   .pipe(rename('kap.min.js'))
   .pipe(gulp.dest('dist/js'));
 });
