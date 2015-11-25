@@ -41,6 +41,9 @@ gulp.task('clean:zip', function(callback) {
   return del(['./katherine-anne.zip'], callback);
 });
 
+gulp.task('copy', function(callback) {
+  return gulp.src(['src/**/*.php', 'src/**/*.png'])
+    .pipe(gulp.dest('./dist'));
 });
 
 gulp.task('build:css', function() {
@@ -98,6 +101,7 @@ gulp.task('styles-only', function(callback) {
 gulp.task('default', function(callback) {
   return runSequence(
     'clean:build',
+    'copy',
     ['build:css', 'typography', 'build:es6'],
     callback
   );
