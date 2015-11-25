@@ -56,7 +56,7 @@ gulp.task('build:es6', function() {
     entries: './src/js/main.js',
     debug: true
   })
-  .transform(babelify)
+  .transform(babelify, {presets: ['es2015']})
   .bundle()
   .on('error', function (err) { gutil.log("Error : " + err.message); })
   .pipe(source('kap.js'))
