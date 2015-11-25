@@ -88,6 +88,11 @@ gulp.task('build:es6', function() {
   .pipe(gulp.dest('dist/js'));
 });
 
+gulp.task('watch', function() {
+  gulp.watch('src/js/**/*.js', ['build:es6']);
+  gulp.watch('src/scss/**/*.scss', ['build:css']);
+});
+
 gulp.task('distribute', function() {
   return gulp.src(['dist/**/*', 'src/**/*.php', 'src/**/*.png'])
     .pipe(zip('katherine-anne.zip'))
@@ -110,3 +115,5 @@ gulp.task('default', function(callback) {
     callback
   );
 });
+
+gulp.task('run', ['default', 'watch']);
