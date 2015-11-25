@@ -33,8 +33,14 @@ const banner = {
     */ \n\n`
 };
 
-gulp.task('clean', function(callback) {
-  return del(['./dist', './katherine-anne.zip'], callback);
+gulp.task('clean:build', function(callback) {
+  return del(['./dist'], callback);
+});
+
+gulp.task('clean:zip', function(callback) {
+  return del(['./katherine-anne.zip'], callback);
+});
+
 });
 
 gulp.task('build:css', function() {
@@ -68,7 +74,7 @@ gulp.task('build:es6', function() {
   .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('zip', function() {
+gulp.task('distribute', function() {
   return gulp.src(['dist/**/*', 'src/**/*.php', 'src/**/*.png'])
     .pipe(zip('katherine-anne.zip'))
     .pipe(gulp.dest('./'));
@@ -76,17 +82,16 @@ gulp.task('zip', function() {
 
 gulp.task('styles-only', function(callback) {
   return runSequence(
+    'clean:build',
     ['build:css', 'typography'],
-    'zip',
     callback
   );
 });
 
 gulp.task('default', function(callback) {
   return runSequence(
-    'clean',
+    'clean:build',
     ['build:css', 'typography', 'build:es6'],
-    'zip',
     callback
   );
 });
