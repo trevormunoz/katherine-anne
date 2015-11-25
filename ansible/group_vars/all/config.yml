@@ -1,0 +1,13 @@
+---
+db_name: wordpress
+db_user: wordpress
+db_host: localhost
+es_cluster_name: kap-demo
+es_node_name: es-1
+es_data_path: /vagrant/data
+es_cors_hostname: 192\.168\.33\.10
+server_name: wordpress.local
+wp_version: 4.3.1
+wp_sha256sum: df5a5bfa28c916e11e8a636297c8eeb68816fff1d1bc2564c1d73c0063f0027c
+wp_auto_up_disable: false
+wp_core_update_level: true

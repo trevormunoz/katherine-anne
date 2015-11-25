@@ -1,0 +1,7 @@
+---
+  - name: set up an elasticsearch install
+    hosts: local
+    user: ubuntu  # Vagrantfile overrides for vagrant
+    roles:
+      - { role: system,         tags: ['search'] }
+      - { role: elasticsearch,  tags: ['search'] }

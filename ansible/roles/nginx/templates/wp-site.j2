@@ -1,0 +1,17 @@
+upstream php {
+    server unix:/var/run/wordpress.sock;
+}
+
+server {
+
+    listen 80;
+    server_name {{ server_name }};
+    root /var/www/wordpress;
+
+    client_max_body_size 64M;
+
+    index index.php;
+
+    include conf/global/restrictions.conf;
+    include conf/global/wordpress.conf;
+}

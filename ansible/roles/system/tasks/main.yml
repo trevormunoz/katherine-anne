@@ -1,0 +1,61 @@
+---
+  - name: install packages
+    apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+    with_items:
+      - php5
+      - php5-fpm
+      - php5-mysql
+      - nginx
+      - mysql-server
+      - python-mysqldb #for ansible
+      - unzip
+    sudo: yes
+    tags:
+      - app
+
+  - name: add repository for oracle java
+    apt_repository: repo='ppa:webupd8team/java'
+    sudo: yes
+    tags:
+      - search
+
+  - name: accept oracle license
+    debconf: >
+      name='oracle-java8-installer'
+      question='shared/accepted-oracle-license-v1-1'
+      value='true'
+      vtype='select'
+    sudo: yes
+    tags:
+      - search
+
+  - name: install packages
+    apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+    with_items:
+      - oracle-java8-installer
+    sudo: yes
+    tags:
+      - search
+
+  - name: install apt key for elasticsearch
+    apt_key: url=https://packages.elastic.co/GPG-KEY-elasticsearch state=present
+    sudo: yes
+    tags:
+      -search
+
+  - name: add repository for elasticsearch
+    apt_repository: >
+      repo='deb http://packages.elastic.co/elasticsearch/1.7/debian stable main'
+      state=present
+    sudo: yes
+    tags:
+      -search
+
+  - name: install elasticsearch
+    apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
+    with_items:
+      - elasticsearch
+      - unzip
+    sudo: yes
+    tags:
+      - search

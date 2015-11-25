@@ -1,0 +1,11 @@
+---
+  - name: set up an wordpress install
+    hosts: local
+    user: ubuntu  # Vagrantfile overrides for vagrant
+    roles:
+      - system
+      - mysql
+      - nginx
+      - php-fpm
+      - wordpress
+      - wp-custom

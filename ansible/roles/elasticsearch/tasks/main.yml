@@ -1,0 +1,52 @@
+---
+  # Only needed for vagrant b/c permissions on synced folders
+- name: Add elasticsearch user to vagrant group
+  user: name=elasticsearch groups=vagrant append=yes
+  when: "'local' in group_names"
+  sudo: yes
+
+- name: Set elasticsearch to run on boot
+  service: name=elasticsearch enabled=yes
+  sudo: yes
+
+- name: Set ES_HEAP_SIZE
+  lineinfile: >
+    dest=/etc/default/elasticsearch
+    regexp=^#ES_HEAP_SIZE=2g
+    line=ES_HEAP_SIZE=1g
+  sudo: yes
+  notify: restart elasticsearch
+
+- name: Configure memory locking
+  lineinfile: >
+    dest=/etc/default/elasticsearch
+    regexp=^#MAX_LOCKED_MEMORY=unlimited
+    line=MAX_LOCKED_MEMORY=unlimited
+  sudo: yes
+  notify: restart elasticsearch
+
+- name: Configure systemd for memory locking
+  lineinfile: >
+    dest=/usr/lib/systemd/system/elasticsearch.service
+    regexp=^#LimitMEMLOCK=infinity
+    line=LimitMEMLOCK=infinity
+  sudo: yes
+  notify: restart elasticsearch
+
+- name: Add cluster config
+  template: >
+    src=elasticsearch.yml.j2
+    dest=/etc/elasticsearch/elasticsearch.yml
+  notify: start elasticsearch
+  sudo: yes
+
+- name: Make sure scripts directory exists
+  file: dest=/etc/elasticsearch/scripts state=directory
+  sudo: yes
+
+- name: Extract zip archive
+  unarchive: >
+    src=kap-query-templates.zip
+    dest=/etc/elasticsearch/scripts
+  sudo: yes
+  notify: restart elasticsearch

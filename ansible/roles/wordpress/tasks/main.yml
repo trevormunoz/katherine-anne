@@ -1,0 +1,48 @@
+---
+- name: Download WordPress
+  get_url: >
+    url=http://wordpress.org/wordpress-{{ wp_version }}.tar.gz
+    dest=/home/vagrant/wordpress-{{ wp_version }}.tar.gz
+    sha256sum="{{ wp_sha256sum }}"
+
+- name: Ensure wordpress dir exists
+  file: dest=/var/www/wordpress state=directory
+  sudo: yes
+
+- name: Extract archive
+  unarchive: >
+    src=/home/vagrant/wordpress-{{ wp_version }}.tar.gz
+    dest=/var/www/
+    copy=no
+  sudo: yes
+
+- name: Add group "wordpress"
+  group: name=wordpress
+  sudo: yes
+
+- name: Add user "wordpress"
+  user: name=wordpress group=wordpress home=/var/www/wordpress/
+  sudo: yes
+
+- name: Fetch random salts for WordPress config
+  local_action: command curl https://api.wordpress.org/secret-key/1.1/salt/
+  register: "wp_salt"
+  notify:
+    - restart php-fpm
+    - restart nginx
+
+- name: Copy WordPress config file
+  template: src=wp-config.php.j2 dest=/var/www/wordpress/wp-config.php
+  sudo: yes
+  notify:
+    - restart php-fpm
+    - restart nginx
+
+- name: Change ownership of WordPress installation
+  file: >
+    path=/var/www/wordpress/
+    owner=wordpress
+    group=wordpress
+    state=directory
+    recurse=yes
+  sudo: yes

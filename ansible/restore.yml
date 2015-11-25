@@ -1,0 +1,14 @@
+---
+  - name: restore from local wordpress db
+    hosts: local
+    user: vagrant
+    tasks:
+      - name: copy db dump to box
+        copy: src=data/wordpress-local-{{ backup_date }}.sql dest=/home/vagrant/
+
+      - name: load db dump to wordpress-local.sql
+        mysql_db: >
+          name={{ db_name }}
+          state=import
+          target=/vagrant/data/wordpress-local-{{ backup_date }}.sql
+        sudo: yes

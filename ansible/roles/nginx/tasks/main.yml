@@ -1,0 +1,29 @@
+---
+  - name: create global nginx conf dir
+    file: dest=/etc/nginx/conf/global state=directory
+    sudo: yes
+
+  - name: copy nginx global conf
+    copy: src=restrictions.conf dest=/etc/nginx/conf/global/restrictions.conf
+    sudo: yes
+    notify: restart nginx
+
+  - name: copy nginx global wordpress conf
+    copy: src=wordpress.conf dest=/etc/nginx/conf/global/wordpress.conf
+    sudo: yes
+    notify: restart nginx
+
+  - name: copy nginx server conf
+    template: src=wp-site.j2 dest=/etc/nginx/sites-available/wp-site
+    sudo: yes
+    notify: restart nginx
+
+  - name: symlink nginx server conf
+    file: src=/etc/nginx/sites-available/wp-site dest=/etc/nginx/sites-enabled/wp-site state=link
+    sudo: yes
+    notify: restart nginx
+
+  - name: delete default nginx server conf
+    file: path=/etc/nginx/sites-enabled/default state=absent
+    sudo: yes
+    notify: restart nginx

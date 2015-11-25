@@ -1,0 +1,10 @@
+---
+  - name: dump local wordpress db for backup
+    hosts: local
+    user: vagrant
+    tasks:
+      - name: dump db to wordpress-local.sql
+        mysql_db: >
+          state=dump name={{ db_name }}
+          target=/vagrant/data/wordpress-local-{{ ansible_date_time.date }}.sql
+        sudo: yes

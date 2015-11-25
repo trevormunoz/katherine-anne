@@ -1,0 +1,68 @@
+---
+  - name: make sure plugins directory exists
+    stat: path=/var/www/wordpress/wp-content/plugins
+    register: "pth"
+
+  - debug: msg="plugins directory exists"
+    when: pth.stat.isdir is defined and pth.stat.isdir
+
+  - name: make sure mu-plugins directory exists
+    file: path=/var/www/wordpress/wp-content/mu-plugins state=directory
+    sudo: yes
+
+  - name: copy mu-plugin files
+    copy: src=kap_functions.php dest=/var/www/wordpress/wp-content/mu-plugins/kap_functions.php
+    sudo: yes
+
+  - name: download wp admin ui customize plugin
+    get_url: >
+      url=https://downloads.wordpress.org/plugin/wp-admin-ui-customize.1.5.7.zip
+      dest=/home/vagrant/wp-admin-ui-customize.1.5.7.zip
+    sudo: yes
+
+  - name: extract wp-admin-ui
+    unarchive: >
+      src=/home/vagrant/wp-admin-ui-customize.1.5.7.zip
+      dest=/var/www/wordpress/wp-content/plugins/
+      copy=no
+    sudo: yes
+
+  - name: download types plugin
+    get_url: >
+      url=https://downloads.wordpress.org/plugin/types.1.8.10.zip
+      dest=/home/vagrant/types.1.8.10.zip
+    sudo: yes
+
+  - name: extract types
+    unarchive: >
+      src=/home/vagrant/types.1.8.10.zip
+      dest=/var/www/wordpress/wp-content/plugins/
+      copy=no
+    sudo: yes
+
+  - name: copy db dump to box
+    copy: src=data/wordpress/wordpress-local-{{ backup_date }}.sql dest=/home/vagrant/
+
+  - name: load db dump to wordpress-local.sql
+    mysql_db: >
+      name={{ db_name }}
+      state=import
+      target=/vagrant/data/wordpress-local-{{ backup_date }}.sql
+    sudo: yes
+
+  - name: copy child theme files
+    copy: src=katherine-anne.zip dest=/home/vagrant/katherine-anne.zip
+    sudo: yes
+
+  - name: make sure theme directory exists
+    file: path=/var/www/wordpress/wp-content/themes/katherine-anne state=directory
+    sudo: yes
+
+  - name: load child theme
+    unarchive: >
+      src=/home/vagrant/katherine-anne.zip
+      dest=/var/www/wordpress/wp-content/themes/katherine-anne
+      copy=no
+    sudo: yes
+    notify:
+      - restart nginx

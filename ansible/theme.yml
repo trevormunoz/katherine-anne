@@ -1,0 +1,8 @@
+---
+  - name: reload theme
+    hosts: local
+    user: vagrant
+    roles:
+      - wp-custom
+    handlers:
+      - include: roles/nginx/handlers/main.yml

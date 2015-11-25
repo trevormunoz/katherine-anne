@@ -1,0 +1,15 @@
+---
+  - name: disable default pool
+    command: >
+      mv /etc/php5/fpm/pool.d/www.conf
+      /etc/php5/fpm/pool.d/www.disabled
+      creates=/etc/php5/fpm/pool.d/www.disabled
+    sudo: yes
+    notify:
+      - restart php-fpm
+
+  - name: copy php-fpm configuration
+    copy: src=wordpress.conf dest=/etc/php5/fpm/pool.d/wordpress.conf
+    sudo: yes
+    notify:
+      - restart php-fpm
