@@ -1,8 +1,6 @@
 # Katherine Anne
-----
-### A minimal WP Theme for the KAP Correspondence Project
 
-What it says on the tin.
+An online project to provide access to the ideas, attitudes, and experiences of a distinguished 20th century American writer.
 
 ## License
 
