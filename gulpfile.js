@@ -62,6 +62,7 @@ gulp.task('build:css', function() {
       this.emit('end');
     })
     .pipe(header(banner.theme))
+    .pipe(size({'showFiles': true}))
     .pipe(gulp.dest('dist/'));
 });
 
@@ -83,6 +84,7 @@ gulp.task('build:es6', function() {
   .pipe(uglify())
   .on('error', function (err) { gutil.log("Error : " + err.message); })
   .pipe(rename('kap.min.js'))
+  .pipe(size({'showFiles': true}))
   .pipe(gulp.dest('dist/js'));
 });
 
