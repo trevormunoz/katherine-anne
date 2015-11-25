@@ -1,37 +1,36 @@
-'use strict';
-
 // Dependencies
-var gulp = require('gulp');
-var del = require('del');
-var gutil = require('gulp-util');
-var zip = require('gulp-zip');
-var sass = require('gulp-sass');
-var minifyCss = require('gulp-minify-css');
-var browserify = require('browserify');
-var babelify = require('babelify');
-var source = require('vinyl-source-stream');
-var buffer = require('vinyl-buffer');
-var concat = require('gulp-concat');
-var uglify = require('gulp-uglify');
-var rename = require('gulp-rename');
-var header = require('gulp-header');
-//var sourcemaps = require('gulp-sourcemaps');
-var runSequence = require('run-sequence');
+const gulp = require('gulp'),
+      del = require('del'),
+      gutil = require('gulp-util'),
+      connect = require('gulp-connect'),
+      zip = require('gulp-zip'),
+      sass = require('gulp-sass'),
+      autoprefixer = require('gulp-autoprefixer'),
+      minifyCss = require('gulp-minify-css'),
+      browserify = require('browserify'),
+      babelify = require('babelify'),
+      source = require('vinyl-source-stream'),
+      buffer = require('vinyl-buffer'),
+      uglify = require('gulp-uglify'),
+      rename = require('gulp-rename'),
+      header = require('gulp-header'),
+      size = require('gulp-size'),
+      runSequence = require('run-sequence');
 
-var banner = {
+const banner = {
   theme:
-    '/* \n' +
-    'Theme Name:   Katherine Anne \n' +
-    'Theme URI: \n' +
-    'Description:  Katherine Anne Porter Correspondence Theme \n' +
-    'Author:       Trevor Muñoz <tmunoz@umd.edu> \n' +
-    'Author URI:   http://www.trevormunoz.com \n' +
-    'Template:     twentyfifteen \n' +
-    'Version:      0.1.0 \n' +
-    'License:      MIT \n' +
-    'License URI:  http://opensource.org/licenses/MIT \n' +
-    'Text Domain:  katherine-anne \n' +
-    '*/ \n\n'
+    `/*
+    Theme Name:   Katherine Anne
+    Theme URI:
+    Description:  Katherine Anne Porter Correspondence Theme
+    Author:       Trevor Muñoz <tmunoz@umd.edu>
+    Author URI:   http://www.trevormunoz.com
+    Template:     twentyfifteen
+    Version:      0.1.0
+    License:      MIT
+    License URI:  http://opensource.org/licenses/MIT
+    Text Domain:  katherine-anne
+    */ \n\n`
 };
 
 gulp.task('clean', function(callback) {
