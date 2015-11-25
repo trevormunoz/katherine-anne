@@ -94,7 +94,7 @@ gulp.task('distribute', function() {
     .pipe(gulp.dest('./'));
 });
 
-gulp.task('styles-only', function(callback) {
+gulp.task('styles', function(callback) {
   return runSequence(
     'clean:build',
     ['build:css', 'typography'],
