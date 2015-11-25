@@ -2,8 +2,6 @@
 dist*
 katherine-anne.zip
 
-# bower dependencies
-bower_components
 
 # npm dependency directory
 node_modules
