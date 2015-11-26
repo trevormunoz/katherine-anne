@@ -57,7 +57,12 @@
     sudo: yes
 
   - name: make sure theme directory exists
-    file: path=/var/www/wordpress/wp-content/themes/katherine-anne state=directory
+    file: >
+      path=/var/www/wordpress/wp-content/themes/katherine-anne
+      state=directory
+      owner=wordpress
+      group=wordpress
+      recurse=yes
     sudo: yes
 
   # - name: load child theme
