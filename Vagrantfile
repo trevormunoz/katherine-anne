@@ -10,7 +10,7 @@ Vagrant.configure(2) do |config|
     wordpress.vm.network "private_network", ip: "192.168.33.10"
     wordpress.vm.synced_folder "ansible/data/wordpress", "/vagrant/data", create: true
     wordpress.vm.synced_folder "dist", "/var/www/wordpress/wp-content/themes/katherine-anne",
-      owner: "www-data", group: "www-data", create: true
+      :mount_options => ["dmode=777","fmode=777"], create: true
 
     config.vm.provider "virtualbox" do |vb|
       vb.name = "kap-wordpress"

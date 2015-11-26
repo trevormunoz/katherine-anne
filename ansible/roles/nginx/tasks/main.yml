@@ -1,4 +1,13 @@
 ---
+    # Only needed for vagrant b/c synced folders
+  - name: Turn off sendfile in nginx.conf
+    lineinfile: >
+      dest=/etc/nginx/nginx.conf
+      regexp='sendfile\son;$'
+      line='sendfile off;'
+    when: "'local' in group_names"
+    sudo: yes
+
   - name: create global nginx conf dir
     file: dest=/etc/nginx/conf/global state=directory
     sudo: yes

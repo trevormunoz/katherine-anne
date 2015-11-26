@@ -51,18 +51,21 @@
     sudo: yes
 
   - name: copy child theme files
-    copy: src=katherine-anne.zip dest=/home/vagrant/katherine-anne.zip
+    # grab from GitHub when there is a release
+    # get_url: src=katherine-anne.zip dest=/home/vagrant/katherine-anne.zip
+    when: "'local' not in group_names"
     sudo: yes
 
   - name: make sure theme directory exists
     file: path=/var/www/wordpress/wp-content/themes/katherine-anne state=directory
     sudo: yes
 
-  - name: load child theme
-    unarchive: >
-      src=/home/vagrant/katherine-anne.zip
-      dest=/var/www/wordpress/wp-content/themes/katherine-anne
-      copy=no
-    sudo: yes
-    notify:
-      - restart nginx
+  # - name: load child theme
+  #   unarchive: >
+  #     src=/home/vagrant/katherine-anne.zip
+  #     dest=/var/www/wordpress/wp-content/themes/katherine-anne
+  #     copy=no
+  #   when: "'local' not in group_names"
+  #   sudo: yes
+  #   notify:
+  #     - restart nginx
