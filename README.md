@@ -29,6 +29,7 @@ Once you have all the dependencies above:
 * `git clone https://github.com/trevormunoz/katherine-anne.git`
 * `cd katherine-anne`
 * `npm install`
+* `vagrant up`
 * `gulp run`
 
 At this point you should be able to visit the Wordpress site at: [http://192.168.33.10](http://192.168.33.10)
