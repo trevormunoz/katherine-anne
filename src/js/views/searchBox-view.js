@@ -1,5 +1,6 @@
 import $ from 'jquery';
 import * as Backbone from 'backbone';
+import dispatcher from '../helpers/dispatcher.js';
 
 class SearchBoxView extends Backbone.View {
 
@@ -18,7 +19,7 @@ class SearchBoxView extends Backbone.View {
   getQuery() {
     let query = $('.search-teaser input').val();
     if( query !== '' ) {
-      Backbone.trigger('router:queryString', query);
+      dispatcher.trigger('router:go', 'search/?q=' + query);
     }
   }
 

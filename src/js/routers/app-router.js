@@ -1,6 +1,7 @@
 import * as Backbone from 'backbone';
 import SearchBoxView from '../views/searchBox-view.js';
 import SearchResultsView from '../views/searchResults-view.js';
+import dispatcher from '../helpers/dispatcher.js';
 
 class AppRouter extends Backbone.Router {
 
@@ -13,6 +14,7 @@ class AppRouter extends Backbone.Router {
 
   initialize() {
     window.console.log('Router initialized');
+    this.listenTo(dispatcher, 'router:go', this.go);
   }
 
   loadDefault() {
