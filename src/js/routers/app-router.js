@@ -13,7 +13,6 @@ class AppRouter extends Backbone.Router {
   }
 
   initialize() {
-    window.console.log('Router initialized');
     this.listenTo(dispatcher, 'router:go', this.go);
   }
 
