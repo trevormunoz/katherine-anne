@@ -14,30 +14,25 @@
     copy: src=kap_functions.php dest=/var/www/wordpress/wp-content/mu-plugins/kap_functions.php
     sudo: yes
 
-  - name: download wp admin ui customize plugin
+  - name: download plugins from wordpress.org
     get_url: >
-      url=https://downloads.wordpress.org/plugin/wp-admin-ui-customize.1.5.7.zip
-      dest=/home/vagrant/wp-admin-ui-customize.1.5.7.zip
+      url=https://downloads.wordpress.org/plugin/{{ item }}.zip
+      dest=/home/vagrant/{{ item }}.zip
+    with_items:
+      - wp-admin-ui-customize.1.5.7
+      - relative-url.0.0.13
+      - types.1.8.10
     sudo: yes
 
-  - name: extract wp-admin-ui
+  - name: extract plugins
     unarchive: >
-      src=/home/vagrant/wp-admin-ui-customize.1.5.7.zip
+      src=/home/vagrant/{{ item }}.zip
       dest=/var/www/wordpress/wp-content/plugins/
       copy=no
-    sudo: yes
-
-  - name: download types plugin
-    get_url: >
-      url=https://downloads.wordpress.org/plugin/types.1.8.10.zip
-      dest=/home/vagrant/types.1.8.10.zip
-    sudo: yes
-
-  - name: extract types
-    unarchive: >
-      src=/home/vagrant/types.1.8.10.zip
-      dest=/var/www/wordpress/wp-content/plugins/
-      copy=no
+    with_items:
+      - wp-admin-ui-customize.1.5.7
+      - relative-url.0.0.13
+      - types.1.8.10
     sudo: yes
 
   - name: copy db dump to box
