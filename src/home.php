@@ -35,12 +35,7 @@ get_header(); ?>
 		</div><!-- .browse-options -->
 		<hr />
 		<div class="search-teaser">
-			<form class="form-inline" action="/search/results">
-				<div class="form-group">
-					<input type="text">
-				</div>
-				<button type="submit" class="btn btn-primary">Search</button>
-			</form>
+			<?php get_search_form(); ?>
 		</div><!-- .search-teaser -->
 		<hr />
 		<section id="more-about" class="project-about-teaser">
