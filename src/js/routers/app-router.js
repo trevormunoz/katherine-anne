@@ -17,6 +17,10 @@ class AppRouter extends Backbone.Router {
     this.listenTo(dispatcher, 'router:go', this.go);
   }
 
+  go(route) {
+    this.navigate(route, {trigger: true});
+  }
+
   loadDefault() {
     new SearchBoxView();
   }
