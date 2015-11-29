@@ -10,5 +10,9 @@
     "arrowFunctions": true,
     "blockBindings": true,
     "defaultParams": true
+  },
+  "extends": "eslint:recommended",
+  "rules": {
+
   }
 }
