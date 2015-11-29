@@ -5,8 +5,10 @@ class SearchResultsView extends Backbone.View {
 
   get className() { return 'results'; }
 
-  initialize() {
+  initialize(options) {
+    this.options = options;
     window.console.log('SearchResultsView initialized!');
+    window.console.log(this.options.query);
   }
 
 
