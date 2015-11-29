@@ -25,8 +25,8 @@ class AppRouter extends Backbone.Router {
     new SearchBoxView();
   }
 
-  showSearchResults() {
-    new SearchResultsView();
+  showSearchResults(queryString) {
+    new SearchResultsView({query: queryString});
   }
 
 }
