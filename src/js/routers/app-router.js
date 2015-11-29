@@ -8,7 +8,7 @@ class AppRouter extends Backbone.Router {
   get routes() {
     return {
       '': 'loadDefault',
-      'search/results': 'showSearchResults'
+      'search/(?*queryString)': 'showSearchResults'
     };
   }
 
