@@ -45,11 +45,11 @@
       target=/vagrant/data/wordpress-local-{{ backup_date }}.sql
     sudo: yes
 
-  - name: copy child theme files
+  # - name: copy child theme files
     # grab from GitHub when there is a release
     # get_url: src=katherine-anne.zip dest=/home/vagrant/katherine-anne.zip
-    when: "'local' not in group_names"
-    sudo: yes
+    # when: "'local' not in group_names"
+    # sudo: yes
 
   - name: make sure theme directory exists
     file: >
