@@ -4,7 +4,7 @@ import dispatcher from '../helpers/dispatcher.js';
 
 class SearchBoxView extends Backbone.View {
 
-  get el() { return '.search-teaser'; }
+  get el() { return '#search-box'; }
 
   get events() {
     return {
@@ -17,7 +17,7 @@ class SearchBoxView extends Backbone.View {
   }
 
   getQuery() {
-    let query = $('.search-teaser input').val();
+    let query = $('#search-box input').val();
     if( query !== '' ) {
       dispatcher.trigger('router:go', 'search/?q=' + query);
     }
