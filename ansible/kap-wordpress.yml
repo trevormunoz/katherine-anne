@@ -1,5 +1,5 @@
 ---
-  - name: set up an wordpress install
+  - name: set up a wordpress install runnning katherine-anne
     hosts: local
     user: ubuntu  # Vagrantfile overrides for vagrant
     roles:
