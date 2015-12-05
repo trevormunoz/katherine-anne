@@ -45,7 +45,7 @@
 
   - name: add repository for elasticsearch
     apt_repository: >
-      repo='deb http://packages.elastic.co/elasticsearch/1.7/debian stable main'
+      repo='deb http://packages.elastic.co/elasticsearch/2.x/debian stable main'
       state=present
     sudo: yes
     tags:
