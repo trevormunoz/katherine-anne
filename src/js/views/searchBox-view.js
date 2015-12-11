@@ -8,18 +8,21 @@ class SearchBoxView extends Backbone.View {
 
   get events() {
     return {
-      'submit form': 'getQuery'
+      'submit form': 'sendQuery'
     }
+  }
+
+  get query() {
+    return $('#search-box input').val();
   }
 
   initialize() {
     window.console.log('SearchBoxView initialized!');
   }
 
-  getQuery() {
-    let query = $('#search-box input').val();
-    if( query !== '' ) {
-      dispatcher.trigger('router:go', 'search/?q=' + query);
+  sendQuery() {
+    if( this.query !== '' ) {
+      dispatcher.trigger('router:go', ('search/?q=' + this.query));
     }
   }
 
