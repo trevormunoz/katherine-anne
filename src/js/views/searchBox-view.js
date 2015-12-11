@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import * as Backbone from 'backbone';
-import dispatcher from '../helpers/dispatcher.js';
+import dispatcher from '../helpers/dispatcher';
 
 class SearchBoxView extends Backbone.View {
 

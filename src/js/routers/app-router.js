@@ -1,7 +1,7 @@
 import * as Backbone from 'backbone';
-import SearchBoxView from '../views/searchBox-view.js';
-import SearchResultsView from '../views/searchResults-view.js';
-import dispatcher from '../helpers/dispatcher.js';
+import SearchBoxView from '../views/searchBox-view';
+import SearchResultsView from '../views/searchResults-view';
+import dispatcher from '../helpers/dispatcher';
 
 class AppRouter extends Backbone.Router {
 
