@@ -5,5 +5,8 @@ katherine-anne.zip
 # Ignore fixtures
 ansible/data*
 
+# Ignore some media
+src/img/porter_demo_cover*
+
 # npm dependency directory
 node_modules
