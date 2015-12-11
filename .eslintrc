@@ -13,6 +13,6 @@
   },
   "extends": "eslint:recommended",
   "rules": {
-
+    "eqeqeq": [2, "smart"]
   }
 }
