@@ -1,7 +1,8 @@
 import * as elasticsearch from 'elasticsearch';
+import {SEARCH_ROOT_URL} from '../helpers/config';
 
 const searchClient = new elasticsearch.Client({
-  host: 'http://192.168.33.11:9200',
+  host: SEARCH_ROOT_URL,
   apiVersion: '2.1'
   //, log: 'trace'
 });
