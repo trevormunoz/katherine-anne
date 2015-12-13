@@ -11,7 +11,7 @@ class AppRouter extends Backbone.Router {
   get routes() {
     return {
       '': 'loadDefault',
-      'search/(?*queryString)': 'showSearchResults'
+      'search/(?q=*queryString)': 'search'
     };
   }
 
@@ -27,8 +27,8 @@ class AppRouter extends Backbone.Router {
     new AppView();
   }
 
-  showSearchResults(queryString) {
     let q = queryString.substring(2);
+  search(queryString) {
 
     DocumentSet.search(q).then(function(result) {
       let currentDocuments = new DocumentSet(result).documents;
