@@ -20,10 +20,6 @@ class SearchBoxView extends Backbone.View {
     this.listenTo(Events, 'search:noQuery', this.handleEmptyQuery);
   }
 
-  sendQuery() {
-    if( this.query !== '' ) {
-      dispatcher.trigger('router:go', ('search/?q=' + this.query));
-    }
   handleEmptyQuery() {
     window.console.log('query was empty');
   }
