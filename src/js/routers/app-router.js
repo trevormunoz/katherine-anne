@@ -27,7 +27,6 @@ class AppRouter extends Backbone.Router {
     new AppView();
   }
 
-    let q = queryString.substring(2);
   search(queryString) {
 
     DocumentSet.search(q).then(function(result) {
@@ -35,6 +34,7 @@ class AppRouter extends Backbone.Router {
       let docCollection = new Items(currentDocuments);
       new SearchResultsView({collection: docCollection}).render();
     });
+    queryString = queryString || '';
   }
 
 }
