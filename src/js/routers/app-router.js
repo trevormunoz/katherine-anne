@@ -2,6 +2,7 @@ import * as Backbone from 'backbone';
 import Items from '../collections/items';
 import SearchBoxView from '../views/searchBox-view';
 import SearchResultsView from '../views/searchResults-view';
+import AppView from '../views/app-view';
 import DocumentSet from '../helpers/search';
 import dispatcher from '../helpers/dispatcher';
 
@@ -23,7 +24,7 @@ class AppRouter extends Backbone.Router {
   }
 
   loadDefault() {
-    new SearchBoxView();
+    new AppView();
   }
 
   showSearchResults(queryString) {
