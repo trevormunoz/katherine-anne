@@ -1,6 +1,6 @@
 import $ from 'jquery';
 import * as Backbone from 'backbone';
-import dispatcher from '../helpers/dispatcher';
+import Events from '../helpers/backbone-events';
 
 class SearchBoxView extends Backbone.View {
 
@@ -17,13 +17,15 @@ class SearchBoxView extends Backbone.View {
   }
 
   initialize() {
-    window.console.log('SearchBoxView initialized!');
+    this.listenTo(Events, 'search:noQuery', this.handleEmptyQuery);
   }
 
   sendQuery() {
     if( this.query !== '' ) {
       dispatcher.trigger('router:go', ('search/?q=' + this.query));
     }
+  handleEmptyQuery() {
+    window.console.log('query was empty');
   }
 
 }
