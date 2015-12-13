@@ -3,8 +3,8 @@ import Items from '../collections/items';
 import SearchBoxView from '../views/searchBox-view';
 import SearchResultsView from '../views/searchResults-view';
 import AppView from '../views/app-view';
+import Events from '../helpers/backbone-events';
 import DocumentSet from '../helpers/search';
-import dispatcher from '../helpers/dispatcher';
 
 class AppRouter extends Backbone.Router {
 
@@ -16,7 +16,7 @@ class AppRouter extends Backbone.Router {
   }
 
   initialize() {
-    this.listenTo(dispatcher, 'router:go', this.go);
+    this.listenTo(Events, 'router:go', this.go);
   }
 
   go(route) {
