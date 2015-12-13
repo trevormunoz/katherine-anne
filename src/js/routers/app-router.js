@@ -1,7 +1,4 @@
 import * as Backbone from 'backbone';
-import Items from '../collections/items';
-import SearchBoxView from '../views/searchBox-view';
-import SearchResultsView from '../views/searchResults-view';
 import AppView from '../views/app-view';
 import Events from '../helpers/backbone-events';
 import DocumentSet from '../helpers/search';
@@ -28,13 +25,14 @@ class AppRouter extends Backbone.Router {
   }
 
   search(queryString) {
-
-    DocumentSet.search(q).then(function(result) {
-      let currentDocuments = new DocumentSet(result).documents;
-      let docCollection = new Items(currentDocuments);
-      new SearchResultsView({collection: docCollection}).render();
-    });
     queryString = queryString || '';
+
+    if (queryString !== '') {
+      let search = DocumentSet.search(queryString);
+      Events.trigger('search:started', search, queryString);
+    } else {
+      Events.trigger('search:noQuery');
+    }
   }
 
 }
