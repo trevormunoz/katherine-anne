@@ -9,6 +9,14 @@ class SearchView extends BaseView {
     let searchBoxView = new SearchBoxView();
     this.registerSubView(searchBoxView);
 
+    this.listenTo(Events, 'search:started', this.handleSearch);
+  }
+
+  handleSearch(searchPromise) {
+    window.console.log('Search result handler fired');
+    searchPromise.then(function(result) {
+      window.console.log(result);
+    });
   }
 }
 
