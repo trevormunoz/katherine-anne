@@ -3,7 +3,8 @@ import searchClient from './client';
 
 class DocumentSet {
 
-  constructor(response) {
+  constructor(query, response) {
+    this.query = query;
     this.hits = response.hits;
     this.facets = response.aggregations;
   }
