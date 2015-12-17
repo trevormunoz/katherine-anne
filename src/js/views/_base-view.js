@@ -3,8 +3,8 @@ import * as Backbone from 'backbone';
 
 class BaseView extends Backbone.View {
 
-  constructor() {
-    super();
+  constructor(options = {}) {
+    super(options);
     this._subviews = null;
   }
 
