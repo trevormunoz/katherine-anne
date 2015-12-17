@@ -2,7 +2,6 @@
 const gulp = require('gulp'),
       del = require('del'),
       gutil = require('gulp-util'),
-      connect = require('gulp-connect'),
       zip = require('gulp-zip'),
       sass = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
@@ -41,7 +40,7 @@ gulp.task('clean:zip', function(callback) {
   return del(['./katherine-anne.zip'], callback);
 });
 
-gulp.task('copy', function(callback) {
+gulp.task('copy', function() {
   return gulp.src(['src/**/*.php', 'src/**/*.png'])
     .pipe(gulp.dest('./dist'));
 });
