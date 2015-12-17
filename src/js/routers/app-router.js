@@ -1,5 +1,4 @@
 import * as Backbone from 'backbone';
-import AppView from '../views/app-view';
 import DocumentSet from '../helpers/search';
 import Messages from '../helpers/messenger';
 
@@ -7,7 +6,6 @@ class AppRouter extends Backbone.Router {
 
   get routes() {
     return {
-      '': 'loadDefault',
       'search/(?q=*queryString)': 'search'
     };
   }
@@ -18,10 +16,6 @@ class AppRouter extends Backbone.Router {
 
   go(route) {
     this.navigate(route, {trigger: true});
-  }
-
-  loadDefault() {
-    new AppView();
   }
 
   search(queryString) {
