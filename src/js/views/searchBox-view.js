@@ -9,10 +9,22 @@ class SearchBoxView extends BaseView {
     return $('#search-box input').val();
   }
 
+  displayQuery(queryString) {
+    let displayString = decodeURIComponent(queryString.replace(/\+/g, '%20'));
+    $('#search-box input').val(displayString);
+  }
+
+  initialize(options = {}) {
+    this.options = options;
+    if(!this.options.query) {
+      this.handleEmptyQuery();
+    } else {
+      this.displayQuery(this.options.query);
+    }
   }
 
   handleEmptyQuery() {
-    window.console.log('query was empty');
+    //window.console.log('query was empty');
   }
 
 }
