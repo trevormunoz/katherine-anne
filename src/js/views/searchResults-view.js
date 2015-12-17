@@ -4,8 +4,12 @@ class SearchResultsView extends BaseView {
 
   get className() { return 'results'; }
 
-  render() {
+  initialize() {
     window.console.log(this.collection);
+  }
+
+  render() {
+    // Do Something
   }
 
 }
