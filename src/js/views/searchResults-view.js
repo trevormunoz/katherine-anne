@@ -1,6 +1,6 @@
-import * as Backbone from 'backbone';
+import BaseView from './_base-view';
 
-class SearchResultsView extends Backbone.View {
+class SearchResultsView extends BaseView {
 
   get className() { return 'results'; }
 

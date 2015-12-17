@@ -1,7 +1,7 @@
 import $ from 'jquery';
-import * as Backbone from 'backbone';
+import BaseView from './_base-view';
 
-class SearchBoxView extends Backbone.View {
+class SearchBoxView extends BaseView {
 
   get el() { return '#search-box'; }
 
