@@ -1,7 +1,7 @@
 import * as Backbone from 'backbone';
 import AppView from '../views/app-view';
-import Events from '../helpers/backbone-events';
 import DocumentSet from '../helpers/search';
+import Messages from '../helpers/messenger';
 
 class AppRouter extends Backbone.Router {
 
@@ -13,7 +13,7 @@ class AppRouter extends Backbone.Router {
   }
 
   initialize() {
-    this.listenTo(Events, 'router:go', this.go);
+    this.listenTo(Messages, 'router:go', this.go);
   }
 
   go(route) {

@@ -1,5 +1,5 @@
 import BaseView from './_base-view';
-// import Events from '../helpers/backbone-events';
+// import Messages from '../helpers/messenger';
 
 class ItemView extends BaseView {
 

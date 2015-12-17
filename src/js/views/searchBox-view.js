@@ -1,6 +1,5 @@
 import $ from 'jquery';
 import * as Backbone from 'backbone';
-import Events from '../helpers/backbone-events';
 
 class SearchBoxView extends Backbone.View {
 
