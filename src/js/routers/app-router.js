@@ -1,5 +1,5 @@
 import * as Backbone from 'backbone';
-import DocumentSet from '../helpers/search';
+import SearchView from '../views/search-view';
 import Messages from '../helpers/messenger';
 
 class AppRouter extends Backbone.Router {
@@ -18,15 +18,8 @@ class AppRouter extends Backbone.Router {
     this.navigate(route, {trigger: true});
   }
 
-  search(queryString) {
-    queryString = queryString || '';
-
-    if (queryString !== '') {
-      let search = DocumentSet.search(queryString);
-      Events.trigger('search:started', search, queryString);
-    } else {
-      Events.trigger('search:noQuery');
-    }
+  search(queryString = '') {
+    new SearchView({query: queryString});
   }
 
 }
