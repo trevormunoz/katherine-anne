@@ -3,6 +3,8 @@
 # Base configuration for a write heavy cluster
 #
 
+network.bind_host: {{ansible_ssh_host}}
+
 # Cluster / Node Basics
 cluster.name: {{ es_cluster_name }}
 
