@@ -53,4 +53,23 @@ Vagrant.configure(2) do |config|
     end
   end
 
+  config.vm.define "kibana" do |kibana|
+    kibana.vm.hostname = "kibana"
+    kibana.vm.network "private_network", ip: "192.168.33.12"
+
+    config.vm.provider "virtualbox" do |vb|
+      vb.name = "kap-kibana"
+      vb.memory = "1024"
+    end
+
+    kibana.vm.provision "ansible", run: "always" do |ansible|
+      ansible.playbook = "ansible/kap-kibana.yml"
+      ansible.inventory_path = "ansible/hosts"
+      ansible.limit = "kap-kibana"
+      ansible.verbose = 'v'
+
+      ansible.extra_vars = { ansible_ssh_user: 'vagrant'}
+    end
+  end
+
 end

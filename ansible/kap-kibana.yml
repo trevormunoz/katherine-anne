@@ -1,0 +1,6 @@
+---
+  - name: set up kibana for elasticsearch install
+    hosts: local
+    user: ubuntu  # Vagrantfile overrides for vagrant
+    roles:
+      - kibana

@@ -11,3 +11,6 @@ wp_version: 4.4
 wp_sha256sum: 02047ded951bc9d3e3d7e33dc4add71165edff202bee0c00d536e9640813ce99
 wp_auto_up_disable: false
 wp_core_update_level: true
+kibana_version: 4.3.0
+kibana_sha256sum: 3c6236457b2193fa4edee2445b111f19efb1fb5918f9939e117287d2e3f5a23f
+kibana_port: 5601

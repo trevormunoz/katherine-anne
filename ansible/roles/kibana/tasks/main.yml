@@ -1,0 +1,35 @@
+---
+  - name: Download kibana
+    get_url: >
+      url=https://download.elastic.co/kibana/kibana/kibana-{{kibana_version}}-linux-x64.tar.gz
+      dest=/home/vagrant/kibana-{{kibana_version}}-linux-x64.tar.gz
+      sha256sum="{{ kibana_sha256sum }}"
+
+  - name: Ensure kibana dir exists
+    file: dest=/usr/share/kibana-{{kibana_version}}-linux-x64 state=directory
+    sudo: yes
+
+  - name: Extract archive
+    unarchive: >
+      src=/home/vagrant/kibana-{{kibana_version}}-linux-x64.tar.gz
+      dest=/usr/share
+      copy=no
+    sudo: yes
+
+  - name: Edit kibana config
+    lineinfile: >
+      dest=/usr/share/kibana-{{kibana_version}}-linux-x64/config/kibana.yml
+      regexp=^#\selasticsearch.url:\s"http://localhost:9200"
+      line='elasticsearch.url: "http://192.168.33.11:9200"'
+    sudo: yes
+    notify: restart kibana
+
+  - name: Install Sense
+    command: >
+      /usr/share/kibana-{{kibana_version}}-linux-x64/bin/kibana plugin --install elastic/sense
+      creates=/usr/share/kibana-{{kibana_version}}-linux-x64/installedPlugins/sense
+    sudo: yes
+
+  - name: Install kibana init script
+    template: src=kibana.j2 dest=/etc/init.d/kibana mode=0755
+    sudo: yes
