@@ -1,5 +1,5 @@
 ---
-  - name: install packages
+  - name: install packages for wordpress
     apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
     with_items:
       - php5
@@ -29,7 +29,7 @@
     tags:
       - search
 
-  - name: install packages
+  - name: install packages for elasticsearch
     apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
     with_items:
       - oracle-java8-installer
