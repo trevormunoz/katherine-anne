@@ -41,7 +41,7 @@
     apt_key: url=https://packages.elastic.co/GPG-KEY-elasticsearch state=present
     sudo: yes
     tags:
-      -search
+      - search
 
   - name: add repository for elasticsearch
     apt_repository: >
@@ -49,7 +49,7 @@
       state=present
     sudo: yes
     tags:
-      -search
+      - search
 
   - name: install elasticsearch
     apt: pkg={{ item }} update_cache=yes cache_valid_time=3600
