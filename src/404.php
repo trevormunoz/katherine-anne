@@ -24,7 +24,7 @@ get_header(); ?>
     				<p>
               <?php _e( 'We can&rsquo;t deliver you to the page you requested. Try again?', 'katherine-anne' ); ?>
             </p>
-						<p><a href="/introduction"><?php _e('Home', 'katherine-anne'); ?></a></p>
+						<p><a href="/"><?php _e('Home', 'katherine-anne'); ?></a></p>
     			</div><!-- .entry-content -->
         </div><!-- .entry-content-container -->
       </section><!-- .error-404 -->
