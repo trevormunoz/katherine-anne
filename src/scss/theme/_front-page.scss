@@ -1,14 +1,19 @@
 .browse-options {
   @include media-breakpoint-up(md) {
     display: flex;
+    justify-content: space-around;
   };
 }
 
 .browse-teaser {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
   padding-top: 1rem;
 
   h2 {
     font-size: $font-size-h4;
+    text-align: center;
   }
 
   h2>small {
