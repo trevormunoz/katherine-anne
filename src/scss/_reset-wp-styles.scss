@@ -1,0 +1,26 @@
+body:before {
+  content: none;
+}
+
+.entry-content {
+  padding: 0;
+
+  .more-link:after {
+    content: none;
+  }
+}
+
+.entry-header {
+  padding: 0;
+}
+
+.hentry {
+  background-color: inherit;
+  box-shadow: none;
+  margin: 0;
+  padding: 0;
+}
+
+.nav:first-child {
+  margin: 0;
+}

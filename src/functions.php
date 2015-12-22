@@ -36,12 +36,12 @@
  add_action( 'wp_enqueue_scripts', 'theme_enqueue_styles' );
 
  function theme_modify_head_scripts() {
-    wp_register_script( 'typography', get_stylesheet_directory_uri() . '/js/typography.js',
+    wp_register_script( 'site', get_stylesheet_directory_uri() . '/js/site.min.js',
       array('jquery'), '0.7.0', true );
     wp_register_script( 'app', get_stylesheet_directory_uri() . '/js/kap.min.js',
       array(), '0.1.0', true );
 
-   wp_enqueue_script( 'typography' );
+   wp_enqueue_script( 'site' );
    wp_enqueue_script( 'app' );
  }
  add_action( 'wp_enqueue_scripts', 'theme_modify_head_scripts' );

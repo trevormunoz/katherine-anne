@@ -17,22 +17,11 @@
 
 <body>
 
-	<!-- main nav -->
-	<?php if ( ! is_home() && has_nav_menu( 'primary' ) ) : ?>
-			<header>
-				<div class="site-menu">
-					<div class="site-logo">
-						<a href="/">Home</a>
-					</div><!-- .site-logo -->
-					<nav id="site-navigation" class="site-nav" role="navigation">
-						<?php
-							// Primary navigation menu.
-							wp_nav_menu( array(
-								'menu_class'     => 'nav nav-pills nav-inline',
-								'theme_location' => 'primary',
-							) );
-						?>
-					</nav><!-- .main-navigation -->
-				</div><!-- .menu -->
+	<!-- thin top nav -->
+	<?php if ( ! is_home() ) : ?>
+		<header>
+			<div class="site-logo">
+        <a href="/">Katherine Anne Porter <span class="main">Correspondence</span></a>
+      </div><!-- .site-logo -->
 		</header>
 	<?php endif; ?>

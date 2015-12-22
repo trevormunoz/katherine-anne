@@ -1,0 +1,100 @@
+// scss-lint:disable PlaceholderInExtend
+
+.menu-item {
+  padding: 2.5vw;
+}
+
+menu-site-navigation-container {
+  @extend .modal-body;
+}
+
+.modal-header {
+  border-bottom: 0;
+
+  h3 {
+    font-size: $font-size-h5;
+  }
+
+  h3>small {
+    color: $gray-light;
+  }
+
+  h3>small::after {
+    content: '\A';
+    white-space: pre;
+  }
+}
+
+.nav:first-child {
+  margin: auto;
+}
+
+.nav-button {
+  @include button-outline-variant($project-teal);
+}
+
+.scrolled-yes {
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+}
+
+.scrolled-no {
+  display: none;
+}
+
+.site-menu-container,
+.site-search-container {
+  @extend .modal-dialog;
+  margin: 0;
+  width: 100vw;
+}
+
+.site-menu,
+.site-search {
+  @extend .modal-content;
+  border: 0;
+  border-radius: 0;
+  border-top: 1px solid $modal-content-border-color;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  padding: 5vw;
+  text-align: center;
+}
+
+.site-nav {
+  background-color: $project-darkest;
+  bottom: 0;
+  min-height: $mobile-nav-height;
+  padding-bottom: .707rem;
+  padding-left: 5vw;
+  padding-right: 5vw;
+  padding-top: .707rem;
+  position: fixed;
+  width: 100%;
+  // So modal slides out behind menu bar
+  z-index: ($zindex-modal + 10);
+}
+
+// Modal menu container
+.site-tools-menu,
+.site-tools-search {
+  bottom: $mobile-nav-height;
+  display: none;
+  left: 0;
+  overflow: hidden;
+  position: fixed;
+  right: 0;
+  // top: 0;
+  z-index: $zindex-modal;
+
+  &.fade .site-menu-container,
+  &.fade .site-search-container {
+    transform: translate(0, 75%);
+    transition: transform .3s ease-out;
+  }
+
+  &.in .site-menu-container,
+  &.in .site-search-container { transform: translate(0, 0); }
+}

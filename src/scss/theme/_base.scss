@@ -1,0 +1,70 @@
+body {
+  display: flex;
+  flex-flow: column;
+  min-height: 100vh;
+}
+
+.content-area {
+  flex: 1;
+  padding-left: 5vw;
+  padding-right: 5vw;
+}
+
+footer {
+  // height: 4em;
+  padding-bottom: 5rem;
+  padding-top: 1rem;
+}
+
+header {
+  display: flex;
+  padding-bottom: 0;
+  padding-top: 5vw;
+}
+
+.site-logo {
+  font-family: "bodoni-urw", sans-serif;
+  font-size: $font-size-sm;
+  margin: auto;
+  padding: 2.5vw;
+  padding-bottom: 5vw;
+  text-align: center;
+  text-transform: uppercase;
+
+  @include hover-focus {
+    background-color: $project-teal;
+    color: $gray-lightest;
+  }
+
+  .main::before {
+    content: '\A';
+    white-space: pre;
+  }
+
+  .main {
+    // because ems
+    font-size: $font-size-lg;
+  }
+}
+
+.site-logo>a {
+  color: $project-darkest;
+
+  @include hover-focus {
+    color: $gray-lightest;
+    text-decoration: none;
+  }
+
+  &:focus {
+    @include tab-focus();
+  }
+}
+
+.wf-loading {
+  visibility: hidden;
+}
+
+.wf-active,
+.wf-inactive {
+  visibility: visible;
+}

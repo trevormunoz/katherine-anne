@@ -6,6 +6,7 @@ const gulp = require('gulp'),
       sass = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
       minifyCss = require('gulp-minify-css'),
+      concat = require('gulp-concat'),
       browserify = require('browserify'),
       babelify = require('babelify'),
       source = require('vinyl-source-stream'),
@@ -65,8 +66,19 @@ gulp.task('build:css', function() {
     .pipe(gulp.dest('dist/'));
 });
 
-gulp.task('typography', function() {
-  return gulp.src(['src/js/typography.js'])
+gulp.task('build:js', function() {
+  return gulp.src(['src/js/typography.js',
+                   'node_modules/bootstrap/js/dist/util.js',
+                   'node_modules/bootstrap/js/dist/modal.js',
+                   'src/js/interactive-styles.js'])
+    .pipe(concat('site.js'))
+    .pipe(uglify())
+    .on('error', function(err) {
+      gutil.log("Error : " + err.message);
+      this.emit('end');
+    })
+    .pipe(rename('site.min.js'))
+    .pipe(size({'showFiles': true}))
     .pipe(gulp.dest('dist/js'));
 });
 
@@ -101,7 +113,7 @@ gulp.task('distribute', function() {
 gulp.task('styles', function(callback) {
   return runSequence(
     'clean:build',
-    ['build:css', 'typography'],
+    ['build:css', 'build:js'],
     callback
   );
 });
@@ -110,7 +122,7 @@ gulp.task('default', function(callback) {
   return runSequence(
     'clean:build',
     'copy',
-    ['build:css', 'typography', 'build:es6'],
+    ['build:css', 'build:js', 'build:es6'],
     callback
   );
 });

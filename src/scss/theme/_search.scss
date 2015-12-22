@@ -1,0 +1,33 @@
+// scss-lint:disable PlaceholderInExtend
+
+.genericon-search {
+  font-size: $font-size-lg;
+  font-weight: bold;
+}
+
+.site-search-form {
+  @extend .modal-body;
+  padding: 0;
+
+  form {
+    display: flex;
+    flex-flow: row nowrap;
+
+    input {
+      min-height: 1.999rem;
+    }
+
+    .form-group {
+      display: flex;
+      flex-basis: 18rem;
+      flex-grow: 1;
+      flex-shrink: 1;
+      margin-bottom: 0;
+    }
+
+    button {
+      display: flex;
+      flex-grow: 1;
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.browse-options {
+  @include media-breakpoint-up(md) {
+    display: flex;
+  };
+}
+
+.browse-teaser {
+  padding-top: 1rem;
+
+  h2 {
+    font-size: $font-size-h4;
+  }
+
+  h2>small {
+    color: $gray-light;
+  }
+
+  h2>small::after {
+    content: '\A';
+    white-space: pre;
+  }
+}
+
+.hero-area {
+  background-color: $project-teal;
+  display: flex;
+  flex: 3 0 auto;
+  flex-flow: column;
+  padding: 5vw;
+  padding-bottom: ($line-height * $line-height);
+}
+
+.main-action-button {
+  @include button-outline-variant($project-teal);
+  @include button-size($btn-padding-y-lg,
+                       $btn-padding-x-lg,
+                       $font-size-lg,
+                       $line-height-lg,
+                       $btn-border-radius-lg);
+  @include center-block;
+  max-width: 21rem;
+}
+
+.site-about-teaser {
+  padding-top: 1rem;
+}
+
+.site-call-to-action {
+  align-items: center;
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column;
+  justify-content: space-around;
+  padding: 5vw;
+}
+
+.site-hero-title {
+  color: $gray-lightest;
+  font-family: "bodoni-urw", sans-serif;
+  margin-bottom: auto;
+  margin-top: auto;
+  text-shadow: 0 1px 1px hsla(184, 26%, 49%, .9);
+  text-transform: uppercase;
+}
+
+.site-main-title {
+  font-size: $font-size-h2;
+  margin-top: 0;
+
+  :nth-child(1)::after,
+  :nth-child(2)::after {
+    content: '\A';
+    white-space: pre;
+  }
+
+  :nth-child(2) {
+    padding-left: 1.999rem;
+  }
+}
+
+.site-sub-title {
+  font-size: $font-size-h3;
+}
+
+.splash {
+  display: flex;
+  flex-flow: column;
+  height: 100vh;
+}
