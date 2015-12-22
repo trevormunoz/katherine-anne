@@ -13,6 +13,21 @@ get_header(); ?>
 
 			<?php get_search_form(); ?>
 
+			<div class="search-facets">
+			  <div class="facet-toolbar">
+			    <div class="facet-label all active">All</div>
+			    <div class="facet-group">
+						<div class="facet-group-label">Filter: </div>
+			      <div class="facet-label">Date</div>
+			      <div class="facet-label">Location</div>
+			      <div class="facet-label">Recipient</div>
+			    </div>
+			  </div>
+			  <div class="facet-body-container">
+			    <!-- insert facet content -->
+			  </div>
+			</div>
+
 		</main><!-- .site-main -->
 	</section><!-- .content-area -->
 

@@ -1,5 +1,46 @@
 // scss-lint:disable PlaceholderInExtend
 
+.facet-body-container {
+  padding-top: 5vw;
+}
+
+.facet-group {
+  display: flex;
+  flex: 5;
+  flex-flow: row nowrap;
+  justify-content: space-between;
+}
+
+.facet-group-label {
+  color: $gray;
+  display: flex;
+  font-style: italic;
+  padding: 2.5vw;
+}
+
+.facet-label {
+  display: flex;
+  padding: 2.5vw;
+
+  &.active {
+    border-bottom: 1vw solid $project-teal;
+    font-weight: 700;
+  }
+}
+
+.facet-toolbar {
+  align-items: baseline;
+  border: .0662rem solid $input-border;
+  border-top: 0;
+  display: flex;
+  flex-flow: row nowrap;
+  font-size: $font-size-sm;
+
+  .all {
+    flex: 1;
+  }
+}
+
 .genericon-search {
   font-size: $font-size-lg;
   font-weight: bold;
