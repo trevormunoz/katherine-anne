@@ -6,6 +6,8 @@
 
 get_header(); ?>
 
+	<?php get_template_part( 'site', 'tools' ); ?>
+
 	<section id="primary" class="content-area search">
 		<main id="main" class="site-main" role="main">
 
