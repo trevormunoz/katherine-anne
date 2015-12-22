@@ -4,6 +4,9 @@
     "node": true,
     "browser": true
   },
+  "globals": {
+    "jQuery": true
+  },
   "ecmaFeatures": {
     "modules": true,
     "classes": true,
