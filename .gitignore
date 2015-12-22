@@ -5,8 +5,10 @@ katherine-anne.zip
 # Ignore fixtures
 ansible/data*
 
-# Ignore some media
+# Ignore some dependencies
 src/img/porter_demo_cover*
+**/kap_functions.php
+**/kap-query-templates.zip
 
 # npm dependency directory
 node_modules
