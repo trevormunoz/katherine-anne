@@ -1,6 +1,14 @@
 // scss-lint:disable PlaceholderInExtend
 
+.empty-search,
+.search-total-count {
+  color: $gray-light;
+  display: none;
+  margin: auto;
+}
+
 .facet-body-container {
+  display: none;
   margin-bottom: $theme-base-padding;
 }
 
@@ -44,6 +52,54 @@
 .genericon-search {
   font-size: $font-size-lg;
   font-weight: bold;
+}
+
+.result {
+  border-bottom: .0662rem solid $input-border;
+  display: flex;
+  flex-flow: row-reverse;
+  margin-bottom: $theme-base-padding-y;
+  padding-bottom: $theme-base-padding-y;
+  padding-top: $theme-base-padding-y;
+}
+
+.result:last-child {
+  margin-bottom: $theme-padding-lg;
+}
+
+.result-body {
+  display: flex;
+  flex-flow: column;
+  margin-left: $theme-base-padding-x;
+
+  h2 {
+    font-size: $font-size-h5;
+    margin-bottom: ($spacer / 8);
+  }
+}
+
+.result-cap {
+  display: flex;
+  flex: 0 0 4.062rem;
+}
+
+.result-subhead {
+  color: $gray;
+}
+
+.search-button {
+  @include button-outline-variant($project-teal);
+  display: none;
+  width: 100%;
+}
+
+.search-facets {
+  margin-bottom: $theme-base-padding;
+}
+
+.search-results {
+  display: flex;
+  flex-flow: column;
 }
 
 .site-search-form {
