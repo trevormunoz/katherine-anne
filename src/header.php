@@ -17,11 +17,10 @@
 
 <body>
 
-	<!-- thin top nav -->
 	<?php if ( ! is_home() ) : ?>
-		<header>
-			<div class="site-logo">
+		<header class="site-logo">
+			<h1>
         <a href="/">Katherine Anne Porter <span class="main">Correspondence</span></a>
-      </div><!-- .site-logo -->
-		</header>
+      </h1>
+		</header><!-- .site-logo -->
 	<?php endif; ?>
