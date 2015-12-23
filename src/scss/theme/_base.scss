@@ -26,8 +26,8 @@ header {
   font-family: "bodoni-urw", sans-serif;
   font-size: $font-size-sm;
   margin: auto;
-  padding: 2.5vw;
-  padding-bottom: 5vw;
+  padding: $theme-base-padding;
+  padding-bottom: $theme-padding-lg;
   text-align: center;
   text-transform: uppercase;
 

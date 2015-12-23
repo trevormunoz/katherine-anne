@@ -1,7 +1,7 @@
 // scss-lint:disable PlaceholderInExtend
 
 .facet-body-container {
-  padding-top: 5vw;
+  margin-bottom: $theme-base-padding;
 }
 
 .facet-group {
@@ -15,12 +15,12 @@
   color: $gray;
   display: flex;
   font-style: italic;
-  padding: 2.5vw;
+  padding: $theme-base-padding;
 }
 
 .facet-label {
   display: flex;
-  padding: 2.5vw;
+  padding: $theme-base-padding;
 
   &.active {
     border-bottom: 1vw solid $project-teal;

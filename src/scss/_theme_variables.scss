@@ -65,6 +65,14 @@ $spacer-y:                   $spacer !default;
 $border-width:               .0622em !default;
 $mobile-nav-height:          ($spacer * 3.998) !default;
 
+// Theme Padding
+//
+// Some basic padding values to use across the theme
+
+$theme-base-padding: .707rem !default;
+$theme-base-padding-x: $theme-base-padding;
+$theme-base-padding-y: $theme-base-padding;
+$theme-padding-lg: ($theme-base-padding * 2);
 
 // Body
 //
