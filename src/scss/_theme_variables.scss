@@ -160,7 +160,7 @@ $display4-weight:             300 !default;
 $line-height:                1.414 !default;
 
 $headings-margin-bottom:     ($spacer / 2) !default;
-$headings-font-family:       "bodoni-urw", Georgia, sans-serif !default;
+$headings-font-family:       $font-family-serif;
 $headings-font-weight:       500 !default;
 $headings-line-height:       1.1 !default;
 $headings-color:             inherit !default;
