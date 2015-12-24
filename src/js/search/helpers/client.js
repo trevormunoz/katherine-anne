@@ -1,5 +1,5 @@
 import * as elasticsearch from 'elasticsearch';
-import {SEARCH_ROOT_URL} from '../helpers/config';
+import {SEARCH_ROOT_URL} from '../../utils/config';
 
 const searchClient = new elasticsearch.Client({
   host: SEARCH_ROOT_URL,
