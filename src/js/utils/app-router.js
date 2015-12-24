@@ -1,5 +1,5 @@
 import * as Backbone from 'backbone';
-import SearchView from '../search/views/search-view';
+import SearchAppView from '../search/views/searchApp-view';
 import Messages from './messenger';
 
 class AppRouter extends Backbone.Router {
@@ -19,7 +19,7 @@ class AppRouter extends Backbone.Router {
   }
 
   search(queryString = '') {
-    new SearchView({query: queryString});
+    new SearchAppView({query: queryString});
   }
 
 }
