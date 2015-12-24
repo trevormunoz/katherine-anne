@@ -67,10 +67,10 @@ gulp.task('build:css', function() {
 });
 
 gulp.task('build:js', function() {
-  return gulp.src(['src/js/typography.js',
+  return gulp.src(['src/js/utils/typography.js',
                    'node_modules/bootstrap/js/dist/util.js',
                    'node_modules/bootstrap/js/dist/modal.js',
-                   'src/js/interactive-styles.js'])
+                   'src/js/utils/interactive-styles.js'])
     .pipe(concat('site.js'))
     .pipe(uglify())
     .on('error', function(err) {

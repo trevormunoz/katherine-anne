@@ -1,6 +1,6 @@
 import * as Backbone from 'backbone';
-import SearchView from '../views/search-view';
-import Messages from '../helpers/messenger';
+import SearchView from '../search/views/search-view';
+import Messages from './messenger';
 
 class AppRouter extends Backbone.Router {
 
