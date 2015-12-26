@@ -29,7 +29,6 @@ get_header(); ?>
 			</div><!-- .search-facets -->
 			<div class="search-results">
 				<!-- insert result list -->
-				<div class="empty-search">No Results</div>
 			</div><!-- .search-results -->
 			<button type="button" class="btn search-button disabled">Next</button>
 		</main><!-- .site-main -->

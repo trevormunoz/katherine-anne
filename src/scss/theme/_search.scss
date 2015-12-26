@@ -1,6 +1,5 @@
 // scss-lint:disable PlaceholderInExtend
 
-.empty-search,
 .search-total-count {
   color: $gray-light;
   display: none;
@@ -99,7 +98,20 @@
 
 .search-results {
   display: flex;
+  flex: 1 1 auto;
   flex-flow: column;
+
+  &.visible:after {
+    display: flex;
+  }
+}
+
+.search-results:after {
+  color: $gray-light;
+  content: 'No Results';
+  display: none;
+  margin: auto;
+  white-space: pre;
 }
 
 .site-search-form {
