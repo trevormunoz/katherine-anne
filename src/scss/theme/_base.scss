@@ -60,6 +60,11 @@ header {
   }
 }
 
+.site-main {
+  display: flex;
+  flex-flow: column;
+}
+
 .wf-loading {
   visibility: hidden;
 }
