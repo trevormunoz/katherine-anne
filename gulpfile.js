@@ -74,12 +74,12 @@ gulp.task('build:css', function() {
 });
 
 gulp.task('build:js', function() {
-  return gulp.src(['src/js/utils/typography.js',
-                   'node_modules/bootstrap/js/dist/util.js',
+  return gulp.src(['node_modules/bootstrap/js/dist/util.js',
                    'node_modules/bootstrap/js/dist/modal.js',
-                   'src/js/utils/interactive-styles.js'])
+                   'src/js/utils/interactive-styles.js',
+                   'src/js/utils/typography.js'])
     .pipe(concat('site.js'))
-    .pipe(uglify())
+    .pipe(uglify({ mangle: false }))
     .on('error', function(err) {
       gutil.log("Error : " + err.message);
       this.emit('end');
@@ -99,11 +99,17 @@ gulp.task('app', function() {
   .external(libs)
   .transform(babelify, {presets: ['es2015']})
   .bundle()
-  .on('error', function (err) { gutil.log("Error : " + err.message); })
+  .on('error', function (err) {
+    gutil.log("Error : " + err.message);
+    this.emit('end');
+  })
   .pipe(source('kap.js'))
   .pipe(buffer())
-  .pipe(uglify())
-  .on('error', function (err) { gutil.log("Error : " + err.message); })
+  .pipe(uglify({ mangle: false }))
+  .on('error', function (err) {
+    gutil.log("Error : " + err.message);
+    this.emit('end');
+  })
   .pipe(rename('kap.min.js'))
   .pipe(size({'showFiles': true}))
   .pipe(gulp.dest('dist/js'));
