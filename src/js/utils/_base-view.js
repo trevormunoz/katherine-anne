@@ -8,6 +8,10 @@ class BaseView extends Backbone.View {
     this._subviews = null;
   }
 
+  assign(view, selector) {
+    view.setElement(this.$(selector)).render();
+  }
+
   registerSubView(view) {
     this._subviews = this._subviews || [];
     this._subviews.push(view);
