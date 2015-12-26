@@ -33,6 +33,13 @@ const banner = {
     */ \n\n`
 };
 
+const libs = [
+  'backbone',
+  'underscore',
+  'handlebars',
+  'elasticsearch'
+];
+
 gulp.task('clean:build', function(callback) {
   return del(['./dist'], callback);
 });
@@ -82,11 +89,14 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('build:es6', function() {
+gulp.task('build:es6', ['app', 'vendor']);
+
+gulp.task('app', function() {
   return browserify({
     entries: './src/js/main.js',
     debug: true
   })
+  .external(libs)
   .transform(babelify, {presets: ['es2015']})
   .bundle()
   .on('error', function (err) { gutil.log("Error : " + err.message); })
@@ -99,8 +109,30 @@ gulp.task('build:es6', function() {
   .pipe(gulp.dest('dist/js'));
 });
 
+gulp.task('vendor', function() {
+  return browserify({
+      debug: false
+    })
+    .require(libs)
+    .bundle()
+      .on('error', function (err) {
+        gutil.log("Error : " + err.message);
+        this.emit('end');
+      })
+    .pipe(source('vendor.js'))
+    .pipe(buffer())
+    .pipe(uglify({ mangle: false }))
+    .on('error', function (err) {
+      gutil.log("Error : " + err.message);
+      this.emit('end');
+    })
+    .pipe(rename('vendor.min.js'))
+    .pipe(size({'showFiles': true}))
+    .pipe(gulp.dest('dist/js'));
+});
+
 gulp.task('watch', function() {
-  gulp.watch('src/js/**/*.js', ['build:es6']);
+  gulp.watch('src/js/**/*.js', ['app']);
   gulp.watch('src/scss/**/*.scss', ['build:css']);
 });
 
