@@ -9,6 +9,7 @@ class BaseView extends Backbone.View {
   }
 
   assign(view, selector) {
+    // selector has to be present & in scope
     view.setElement(this.$(selector)).render();
   }
 
