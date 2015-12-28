@@ -5,7 +5,8 @@ const gulp = require('gulp'),
       zip = require('gulp-zip'),
       sass = require('gulp-sass'),
       autoprefixer = require('gulp-autoprefixer'),
-      minifyCss = require('gulp-minify-css'),
+      nano = require('gulp-cssnano'),
+      sourcemaps = require('gulp-sourcemaps'),
       concat = require('gulp-concat'),
       browserify = require('browserify'),
       babelify = require('babelify'),
@@ -63,7 +64,9 @@ gulp.task('build:css', function() {
       browsers: ['last 2 versions'],
       cascade: false
     }))
-    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(sourcemaps.init())
+    .pipe(nano())
+    .pipe(sourcemaps.write('.'))
     .on('error', function(err) {
       gutil.log("Error : " + err.message);
       this.emit('end');
