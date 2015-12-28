@@ -12,7 +12,11 @@ class DocumentSet {
   get totalHits() { return this.hits.total; }
 
   get documents() {
-    return this.returnDocuments();
+    return this.returnedDocuments();
+  }
+
+  get pages() {
+    return this.calculatePages();
   }
 
   static search(query) {
@@ -40,7 +44,7 @@ class DocumentSet {
     return Math.ceil(this.totalHits % pageSize);
   }
 
-  returnDocuments() {
+  returnedDocuments() {
     let documents = this.hits.hits;
     return _.map(documents, (doc) => { return doc._source; });
   }
