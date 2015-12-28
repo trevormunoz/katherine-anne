@@ -39,8 +39,46 @@ $brand-info:                #5bc0de !default;
 $brand-warning:             #f0ad4e !default;
 $brand-danger:              #d9534f !default;
 
-$project-teal:              #789ea3 !default;
-$project-darkest:           #17363a !default;
+
+// Project palette
+$gumbo-green:               #789ea3 !default;
+$tiber-gray:                #17363a !default;
+$bittersweet-red:           #ed6a5a !default;
+$loblolly-blue:             #c1cfda !default;
+$double-colonial-tan:       #eee3ab !default;
+
+$project-colors: (
+  gumbo: (
+    base: $gumbo-green,
+    light: lighten($gumbo-green, 20%),
+    dark: darken($gumbo-green, 20%)
+  ),
+
+  loblolly: (
+    base: $loblolly-blue,
+    light: lighten($loblolly-blue, 20%),
+    dark: darken($loblolly-blue, 20%)
+  ),
+
+  colonial: (
+    base: $double-colonial-tan,
+    dark: darken($double-colonial-tan, 20%)
+  ),
+
+  bittersweet: (
+    base: $bittersweet-red,
+    light: lighten($bittersweet-red, 20%),
+    dark: darken($bittersweet-red, 20%)
+  ),
+
+  tiber: (
+    base: $tiber-gray
+  ),
+);
+
+@function project-color($project-color, $tone: 'base') {
+  @return map-get(map-get($project-colors, $project-color), $tone);
+}
 
 // Options
 //
@@ -200,7 +238,7 @@ $border-radius-lg:       .3rem !default;
 $border-radius-sm:       .2rem !default;
 
 $component-active-color: $white;
-$component-active-bg:    $project-teal !default;
+$component-active-bg:    project-color(gumbo) !default;
 
 $caret-width:            .3em !default;
 $caret-width-lg:         $caret-width !default;
@@ -230,7 +268,7 @@ $btn-padding-y:                  .375rem;
 $btn-font-weight:                normal !default;
 
 $btn-primary-color:              $white;
-$btn-primary-bg:                 $brand-primary !default;
+$btn-primary-bg:                 project-color(gumbo, dark);
 $btn-primary-border:             $btn-primary-bg !default;
 
 $btn-secondary-color:            $gray-dark !default;

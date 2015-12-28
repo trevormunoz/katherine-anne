@@ -27,7 +27,7 @@
 }
 
 .hero-area {
-  background-color: $project-teal;
+  background-color: project-color(gumbo);
   display: flex;
   flex: 3 0 auto;
   flex-flow: column;
@@ -36,7 +36,7 @@
 }
 
 .main-action-button {
-  @include button-outline-variant($project-teal);
+  @include button-outline-variant(project-color(gumbo, dark));
   @include button-size($btn-padding-y-lg,
                        $btn-padding-x-lg,
                        $font-size-lg,

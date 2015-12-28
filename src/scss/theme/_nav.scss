@@ -30,7 +30,7 @@ menu-site-navigation-container {
 }
 
 .nav-button {
-  @include button-outline-variant($project-teal);
+  @include button-outline-variant(project-color(gumbo, light));
 }
 
 .scrolled-yes {
@@ -67,7 +67,7 @@ menu-site-navigation-container {
 }
 
 .site-nav {
-  background-color: $project-darkest;
+  background-color: $tiber-gray;
   bottom: 0;
   min-height: $mobile-nav-height;
   padding-bottom: .707rem;

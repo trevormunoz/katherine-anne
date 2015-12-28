@@ -32,12 +32,12 @@ header {
   text-transform: uppercase;
 
   @include hover-focus {
-    background-color: $project-teal;
+    background-color: project-color(gumbo);
     color: $gray-lightest;
   }
 
   a {
-    color: $project-darkest;
+    color: $tiber-gray;
 
     @include hover-focus {
       color: $gray-lightest;
