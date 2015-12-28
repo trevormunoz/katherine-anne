@@ -26,6 +26,9 @@ get_header(); ?>
 			  <div class="facet-body-container">
 			    <!-- facet content -->
 			  </div>
+				<div class="facet-alert-container">
+					<!-- alert active facets -->
+				</div>
 			</div><!-- .search-facets -->
 			<div class="search-results">
 				<!-- result list -->
