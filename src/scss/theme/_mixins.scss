@@ -1,0 +1,17 @@
+@mixin custom-close {
+  background-color: currentColor;
+  border-radius: 50%;
+  color: $gray-lightest;
+  display: flex;
+  height: 1.999rem;
+  opacity: .5;
+  width: 1.999rem;
+
+  .close {
+    display: flex;
+    font-weight: normal;
+    margin: auto;
+    opacity: .5;
+    text-shadow: none;
+  }
+}
