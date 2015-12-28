@@ -5,6 +5,10 @@ class Facets extends Backbone.Collection {
 
   get model() { return Facet; }
 
+  initialize(models, options) {
+    this.type = options.type;
+  }
+
 }
 
 export default Facets;
