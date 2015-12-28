@@ -1,14 +1,108 @@
 // scss-lint:disable PlaceholderInExtend
 
-.search-total-count {
-  color: $gray-light;
+.facet {
+  background-color: project-color(gumbo, dark);
   display: none;
-  margin: auto;
+  flex-flow: column;
+  width: 100%;
+
+  &.active {
+    display: flex;
+  }
+}
+
+.facet-alert-container {
+  align-items: flex-start;
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.facet-alert {
+  align-items: center;
+  display: flex;
+  flex: 0 1 auto;
+  justify-content: space-between;
+  margin: 1px;
+  padding: ($theme-base-padding / 2);
+
+  &.decades {
+    background-color: project-color(bittersweet);
+    color: $gray-lightest;
+  }
+
+  &.locations {
+    background-color: project-color(loblolly, dark);
+    color: project-color(loblolly, light);
+  }
+
+  &.recipients {
+    background-color: project-color(colonial, dark);
+    color: project-color(tiber);
+  }
+}
+
+.facet-alert-type {
+  display: none;
+}
+
+.facet-alert-name {
+  display: flex;
+  padding-left: ($theme-base-padding / 2);
+  padding-right: ($theme-base-padding / 2);
+}
+
+.facet-alert-control {
+  @include custom-close();
+  display: flex;
+  height: 1.414rem;
+  width: 1.414rem;
 }
 
 .facet-body-container {
+  border: 0;
   display: none;
-  margin-bottom: $theme-base-padding;
+  transform: translate(0, 0);
+
+  &.drawer-open {
+    display: flex;
+    flex-flow: column;
+    padding-bottom: $theme-base-padding-y;
+    // Nudge up just a smidge to overlap the pesky border
+    // so it looks like a seamless drawer
+    transform: translate(0, -1px);
+  }
+}
+
+.facet-card {
+  background-color: $gray-lighter;
+  display: none;
+
+  &.active {
+    display: flex;
+    flex: 1 0 16rem;
+    flex-flow: column;
+  }
+}
+
+.facet-controls {
+  align-items: center;
+  display: flex;
+  justify-content: space-between;
+  order: 3;
+  padding: $theme-base-padding;
+
+  .drawer-toggle {
+    @include custom-close();
+  }
+
+  .view-toggle {
+    color: $navbar-dark-color;
+    display: flex;
+
+    @include hover-focus {
+      color: $navbar-dark-active-color;
+    }
+  }
 }
 
 .facet-group {
@@ -30,9 +124,41 @@
   padding: $theme-base-padding;
 
   &.active {
-    border-bottom: 1vw solid $project-teal;
+    border-bottom: ($theme-base-padding / 2) solid project-color(gumbo, dark);
     font-weight: 700;
   }
+}
+
+.facet-list {
+  display: none;
+  list-style: none;
+  margin: 0;
+
+  &.active {
+    display: flex;
+    flex-flow: column;
+    margin-left: $theme-padding-lg;
+  }
+}
+
+.facet-list-item {
+  display: flex;
+  flex: 1;
+  flex-flow: row nowrap;
+  padding-bottom: $theme-padding-lg;
+  padding-left: $theme-base-padding-x;
+
+  .c-indicator {
+    background-color: $gray-lightest;
+  }
+
+  label {
+    color: $gray-lightest;
+  }
+}
+
+.facet-list-item:first-child {
+  padding-top: ($theme-base-padding-y * 2);
 }
 
 .facet-toolbar {
@@ -42,6 +168,12 @@
   display: flex;
   flex-flow: row nowrap;
   font-size: $font-size-sm;
+  margin-bottom: $theme-base-padding;
+
+  &.drawer-open {
+    border-bottom: 0;
+    margin-bottom: 0;
+  }
 
   .all {
     flex: 1;
@@ -87,12 +219,15 @@
 }
 
 .search-button {
-  @include button-outline-variant($project-teal);
+  @include button-outline-variant(project-color(gumbo));
   display: none;
   width: 100%;
 }
 
 .search-facets {
+  display: flex;
+  flex: 1 0 auto;
+  flex-flow: column;
   margin-bottom: $theme-base-padding;
 }
 
@@ -116,13 +251,18 @@
 
 .site-search-form {
   @extend .modal-body;
+  display: flex;
+  flex: 1;
   padding: 0;
 
   form {
     display: flex;
+    flex: 1 1 auto;
     flex-flow: row nowrap;
 
     input {
+      display: flex;
+      flex: 1 1 auto;
       min-height: 1.999rem;
     }
 
@@ -136,7 +276,13 @@
 
     button {
       display: flex;
-      flex-grow: 0;
+      flex: 0 1 auto;
     }
   }
+}
+
+.search-total-count {
+  color: $gray-light;
+  display: none;
+  margin: auto;
 }
