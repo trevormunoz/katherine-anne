@@ -24,11 +24,11 @@ get_header(); ?>
 			    </div>
 			  </div>
 			  <div class="facet-body-container">
-			    <!-- insert facet content -->
+			    <!-- facet content -->
 			  </div>
 			</div><!-- .search-facets -->
 			<div class="search-results">
-				<!-- insert result list -->
+				<!-- result list -->
 			</div><!-- .search-results -->
 			<button type="button" class="btn search-button disabled">Next</button>
 		</main><!-- .site-main -->
