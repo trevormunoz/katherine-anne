@@ -19,7 +19,7 @@
       url=https://downloads.wordpress.org/plugin/{{ item }}.zip
       dest=/home/vagrant/{{ item }}.zip
     with_items:
-      - wp-admin-ui-customize.1.5.7
+      - wp-admin-ui-customize.1.5.8
       - relative-url.0.0.13
       - types.1.8.11
     sudo: yes
@@ -30,7 +30,7 @@
       dest=/var/www/wordpress/wp-content/plugins/
       copy=no
     with_items:
-      - wp-admin-ui-customize.1.5.7
+      - wp-admin-ui-customize.1.5.8
       - relative-url.0.0.13
       - types.1.8.11
     sudo: yes
