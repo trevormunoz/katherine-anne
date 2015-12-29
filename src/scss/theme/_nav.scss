@@ -33,16 +33,6 @@ menu-site-navigation-container {
   @include button-outline-variant(project-color(gumbo, light));
 }
 
-.scrolled-yes {
-  display: flex;
-  flex-flow: row;
-  justify-content: space-between;
-}
-
-.scrolled-no {
-  display: none;
-}
-
 .site-menu-container,
 .site-search-container {
   @extend .modal-dialog;
@@ -69,6 +59,7 @@ menu-site-navigation-container {
 .site-nav {
   background-color: $tiber-gray;
   bottom: 0;
+  display: none;
   min-height: $mobile-nav-height;
   padding-bottom: .707rem;
   padding-left: 5vw;
@@ -78,6 +69,12 @@ menu-site-navigation-container {
   width: 100%;
   // So modal slides out behind menu bar
   z-index: ($zindex-modal + 10);
+
+  &.scrolled {
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+  }
 }
 
 // Modal menu container
