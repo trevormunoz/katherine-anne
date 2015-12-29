@@ -23,9 +23,10 @@ class SearchAppView extends BaseView {
     this.options = options;
 
     // Fire up a search box, and
-    // if there's a query, start the search
+    // if there's a query, start the search & show the toolbar
     this.initSearchBox();
     if (this.options.query) {
+      this.showFacetToolbar();
       this.doSearch();
     }
 
@@ -99,6 +100,10 @@ class SearchAppView extends BaseView {
     // initializing a collection
     let facetView = new SearchFacetsView({resultFragment: this.options.results.facets});
     this.registerSubView(facetView);
+  }
+
+  showFacetToolbar() {
+    $('.search-facets').css('display', 'flex');
   }
 
   updateResultUI() {
