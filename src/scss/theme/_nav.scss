@@ -35,7 +35,14 @@
 }
 
 .site-footer-nav {
-  padding-bottom: $theme-base-padding-y;
+  border-bottom: 1px solid transparent;
+  border-image: linear-gradient(to right, rgba(0, 0, 0, 0), project-color(tiber), rgba(0, 0, 0, 0));
+  border-image-slice: 1;
+  border-left: 0;
+  border-right: 0;
+  border-top: 0;
+  margin-bottom: ($theme-base-padding-y / 2) + $theme-base-padding-y;
+  padding-bottom: ($theme-base-padding-y / 2);
 
   .menu-item>a {
     color: project-color(tiber);
