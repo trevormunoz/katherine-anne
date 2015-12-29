@@ -1,7 +1,7 @@
-// If page is too short to scroll, show site-nav
+// If page is too short to scroll, show site-navbar
 jQuery(document).ready(function() {
   // cache selector
-  var nav = jQuery('.site-nav');
+  var nav = jQuery('.site-navbar');
 
   window.setTimeout(function() {
     if(jQuery(document).height() <= jQuery(window).height()) {
@@ -15,7 +15,7 @@ jQuery(document).ready(function() {
 // Show sticky bottom menu for mobile on scroll
 jQuery(function() {
   // cache selector
-  var nav = jQuery('.site-nav');
+  var nav = jQuery('.site-navbar');
 
   jQuery(window).scroll(function() {
     var scrollDepth = jQuery(window).scrollTop(),

@@ -15,9 +15,9 @@
         </div>
         <?php if ( has_nav_menu( 'primary' )  ) : ?>
           <?php
-            // Primary navigation menu.
+            // Site navigation menu.
             wp_nav_menu( array(
-              'menu_class'     => 'nav nav-pills nav-inline',
+              'menu_class'     => 'menu-list',
               'theme_location' => 'primary',
             ) );
           ?>

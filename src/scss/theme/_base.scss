@@ -6,14 +6,28 @@ body {
 
 .content-area {
   flex: 1;
+  padding-bottom: 5vw;
   padding-left: 5vw;
   padding-right: 5vw;
 }
 
+.credits {
+  padding-bottom: $theme-padding-lg;
+}
+
 footer {
-  // height: 4em;
-  padding-bottom: 5rem;
+  background-color: $gray-lighter;
+  padding-bottom: 2.827rem;
   padding-top: 1rem;
+}
+
+.footer-content {
+  display: flex;
+  flex: 1;
+  flex-flow: column;
+  padding-bottom: 7.5vw;
+  padding-left: 5vw;
+  padding-right: 5vw;
 }
 
 header {
