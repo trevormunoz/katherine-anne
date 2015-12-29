@@ -77,8 +77,8 @@ gulp.task('build:css', function() {
 });
 
 gulp.task('build:js', function() {
-  return gulp.src(['node_modules/bootstrap/js/dist/util.js',
-                   'node_modules/bootstrap/js/dist/modal.js',
+  return gulp.src(['node_modules/bootstrap/js/dist/umd/util.js',
+                   'node_modules/bootstrap/js/dist/umd/modal.js',
                    'src/js/utils/interactive-styles.js',
                    'src/js/utils/typography.js'])
     .pipe(concat('site.js'))

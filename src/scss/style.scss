@@ -1,8 +1,6 @@
 @charset 'UTF-8';
 
-// import bootstrap's variables in case any have been added since
-// theme_variables was created and would thus be missing;
-@import '../../node_modules/bootstrap/scss/variables';
+// @import '../../node_modules/bootstrap/scss/variables';
 @import '../../node_modules/bootstrap/scss/mixins';
 @import 'theme_variables';
 

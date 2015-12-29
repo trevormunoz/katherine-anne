@@ -163,7 +163,7 @@
 
 .facet-toolbar {
   align-items: baseline;
-  border: .0662rem solid $input-border;
+  border: .0662rem solid $input-border-color;
   border-top: 0;
   display: flex;
   flex-flow: row nowrap;
@@ -186,7 +186,7 @@
 }
 
 .result {
-  border-bottom: .0662rem solid $input-border;
+  border-bottom: .0662rem solid $input-border-color;
   display: flex;
   flex-flow: row-reverse;
   margin-bottom: $theme-base-padding-y;
@@ -225,7 +225,7 @@
 }
 
 .search-facets {
-  display: flex;
+  display: none;
   flex: 1 0 auto;
   flex-flow: column;
   margin-bottom: $theme-base-padding;
@@ -236,12 +236,12 @@
   flex: 1 1 auto;
   flex-flow: column;
 
-  &.visible:after {
+  &.visible::after {
     display: flex;
   }
 }
 
-.search-results:after {
+.search-results::after {
   color: $gray-light;
   content: 'No Results';
   display: none;
