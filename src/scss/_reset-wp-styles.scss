@@ -1,11 +1,11 @@
-body:before {
+body::before {
   content: none;
 }
 
 .entry-content {
   padding: 0;
 
-  .more-link:after {
+  .more-link::after {
     content: none;
   }
 }
