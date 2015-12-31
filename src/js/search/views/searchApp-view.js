@@ -1,6 +1,7 @@
 import $ from 'jquery';
 // import * as _ from 'underscore';
 import BaseView from '../../utils/_base-view';
+import SpinnerView from '../../utils/ui/spinner/_spinner-view';
 import SearchBoxView from './searchBox-view';
 import DocumentSet from '../helpers/search';
 import Documents from '../collections/documents';
@@ -21,6 +22,9 @@ class SearchAppView extends BaseView {
 
   initialize(options = {}) {
     this.options = options;
+
+    let spinner = new SpinnerView();
+    this.registerSubView(spinner);
 
     // Fire up a search box, and
     // if there's a query, start the search & show the toolbar

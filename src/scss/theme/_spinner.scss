@@ -1,0 +1,36 @@
+.progress-meter {
+  .background {
+    fill: $gray;
+  }
+
+  .foreground {
+    fill: project-color(gumbo);
+  }
+
+  text {
+    font-size: $font-size-lg;
+    font-weight: bold;
+  }
+}
+
+.spinner-container {
+  background-color: $white;
+  bottom: 0;
+  display: none;
+  left: 0;
+  position: fixed;
+  right: 0;
+  top: 0;
+
+  &.active {
+    display: flex;
+    opacity: .9;
+    z-index: $zindex-modal-bg;
+  }
+}
+
+.spinner {
+  display: flex;
+  margin: auto;
+  z-index: $zindex-modal;
+}
