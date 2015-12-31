@@ -94,9 +94,9 @@ gulp.task('build:js', function() {
     .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('build:es6', ['app', 'vendor']);
+gulp.task('build:es6', ['build:app', 'build:vendor']);
 
-gulp.task('app', function() {
+gulp.task('build:app', function() {
   return browserify({
     entries: './src/js/main.js',
     debug: true
@@ -120,7 +120,7 @@ gulp.task('app', function() {
   .pipe(gulp.dest('dist/js'));
 });
 
-gulp.task('vendor', function() {
+gulp.task('build:vendor', function() {
   return browserify({
       debug: false
     })
@@ -143,7 +143,7 @@ gulp.task('vendor', function() {
 });
 
 gulp.task('watch', function() {
-  gulp.watch('src/js/**/*.js', ['app']);
+  gulp.watch('src/js/**/*.js', ['build:app']);
   gulp.watch('src/scss/**/*.scss', ['build:css']);
 });
 
