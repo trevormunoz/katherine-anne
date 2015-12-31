@@ -47,7 +47,7 @@ class SearchAppView extends BaseView {
   }
 
   doSearch() {
-    this.options.search = DocumentSet.search(this.options.query);
+    this.options.results = DocumentSet.search(this.options.query);
     this.handleSearch();
   }
 
@@ -70,7 +70,9 @@ class SearchAppView extends BaseView {
     // take that promise passed in here, resolve it, and use the resulting
     // object to instantiate a DocumentSet
     // add that resulting (promise of a) DocumentSet object to this.options
-    let results = this.options.search.then((resultObj) => {
+    // window.console.log(this.options.search);
+    let res = this.options.results.then((resultObj) => {
+      Messages.trigger('search:ready');
       // Only bother to create the object if a search has results
       if(resultObj.hits.total === 0) {
         Messages.trigger('search:noResults');
@@ -80,7 +82,7 @@ class SearchAppView extends BaseView {
       }
     });
 
-    results.then((docset) => {
+    res.then((docset) => {
       if(docset) {
         this.options.results = docset;
         this.initResultSubViews();
@@ -88,8 +90,9 @@ class SearchAppView extends BaseView {
       }
     });
 
-    results.catch((err) => {
+    res.catch((err) => {
       window.console.log(`Something went wrong with the search: ${err}.`);
+      window.console.log(err.stack);
     });
   }
 

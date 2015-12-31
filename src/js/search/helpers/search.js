@@ -21,8 +21,9 @@ class DocumentSet {
 
   static search(query) {
     const queryRegex = /^["']/;
-    let queryTemplate = queryRegex.test(query) ?
-      'faceted_phrase_query' : 'faceted_base_query';
+    let queryTemplate = queryRegex.test(query)
+      ? 'faceted_phrase_query'
+      : 'faceted_base_query';
 
     let queryObj = {
       template: queryTemplate,
