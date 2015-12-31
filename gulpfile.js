@@ -38,7 +38,9 @@ const libs = [
   'backbone',
   'underscore',
   'handlebars',
-  'elasticsearch'
+  'elasticsearch',
+  'd3-request',
+  'd3'
 ];
 
 gulp.task('clean:build', function(callback) {
