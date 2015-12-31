@@ -25,6 +25,8 @@
   "dependencies": {
     "backbone": "^1.2.3",
     "bootstrap": "https://github.com/twbs/bootstrap/archive/v4.0.0-alpha.2.tar.gz",
+    "d3": "3.5.12",
+    "d3-request": "0.2.4",
     "elasticsearch": "10.0.0",
     "handlebars": "^4.0.3",
     "jquery": "^2.1.4"

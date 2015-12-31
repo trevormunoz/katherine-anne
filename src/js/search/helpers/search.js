@@ -31,10 +31,26 @@ class DocumentSet {
       }
     };
 
-    let searchPromise = searchClient.searchTemplate({
-      index: 'kap',
-      sort: '_doc',
-      body: queryObj
+    // d3_request doesn't implement a promise interface
+    // so create one here --- if we were using the default
+    // http connector or the jQuery connector, we could simply
+    // omit the callback in the es client below and get a
+    // promise to consume directly in our app
+    let searchPromise = new Promise((resolve, reject) => {
+
+      searchClient.searchTemplate({
+        index: 'kap',
+        sort: '_doc',
+        body: queryObj
+      }, (err, resultObj) => {
+        // The serialization errors might be quote-escaping problems in source
+        // documents TOFIX
+        if(err.message !== 'Unable to parse/serialize body') {
+          reject(err)
+        }
+
+        resolve(resultObj);
+      });
     });
 
     return searchPromise;
